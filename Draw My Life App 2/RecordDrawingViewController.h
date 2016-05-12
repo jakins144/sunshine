@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *tempImageView;
 
+- (IBAction)pencilButtonAction:(UIButton *)sender;
 
 
 
