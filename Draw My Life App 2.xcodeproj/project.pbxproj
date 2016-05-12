@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0032291C976AA5000FAAD2 /* serveimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB0032281C976AA5000FAAD2 /* serveimage.jpg */; };
 		EB3ABB9E1C7A32520054A82F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABB9D1C7A32520054A82F /* main.m */; };
 		EB3ABBA11C7A32520054A82F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA01C7A32520054A82F /* AppDelegate.m */; };
 		EB3ABBA41C7A32520054A82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA31C7A32520054A82F /* ViewController.m */; };
@@ -15,6 +16,9 @@
 		EB3ABBAC1C7A32520054A82F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3ABBAA1C7A32520054A82F /* LaunchScreen.storyboard */; };
 		EB3ABBB71C7A32530054A82F /* Draw_My_Life_App_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBB61C7A32530054A82F /* Draw_My_Life_App_2Tests.m */; };
 		EB3ABBC21C7A32530054A82F /* Draw_My_Life_App_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBC11C7A32530054A82F /* Draw_My_Life_App_2UITests.m */; };
+		EB3ABBD11C7A446C0054A82F /* ChooseColorCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBD01C7A446C0054A82F /* ChooseColorCollectionViewController.m */; };
+		EB3ABBED1C7A73A10054A82F /* RecordDrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBEC1C7A73A10054A82F /* RecordDrawingViewController.m */; };
+		EB3ABBF01C7A76610054A82F /* ChooseColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBEF1C7A76610054A82F /* ChooseColorCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB0032281C976AA5000FAAD2 /* serveimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = serveimage.jpg; sourceTree = "<group>"; };
 		EB3ABB991C7A32520054A82F /* Draw My Life App 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw My Life App 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3ABB9D1C7A32520054A82F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB3ABB9F1C7A32520054A82F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +56,12 @@
 		EB3ABBBD1C7A32530054A82F /* Draw My Life App 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Draw My Life App 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3ABBC11C7A32530054A82F /* Draw_My_Life_App_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Draw_My_Life_App_2UITests.m; sourceTree = "<group>"; };
 		EB3ABBC31C7A32530054A82F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB3ABBCF1C7A446C0054A82F /* ChooseColorCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseColorCollectionViewController.h; sourceTree = "<group>"; };
+		EB3ABBD01C7A446C0054A82F /* ChooseColorCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseColorCollectionViewController.m; sourceTree = "<group>"; };
+		EB3ABBEB1C7A73A10054A82F /* RecordDrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDrawingViewController.h; sourceTree = "<group>"; };
+		EB3ABBEC1C7A73A10054A82F /* RecordDrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDrawingViewController.m; sourceTree = "<group>"; };
+		EB3ABBEE1C7A76610054A82F /* ChooseColorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseColorCollectionViewCell.h; sourceTree = "<group>"; };
+		EB3ABBEF1C7A76610054A82F /* ChooseColorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseColorCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +112,12 @@
 		EB3ABB9B1C7A32520054A82F /* Draw My Life App 2 */ = {
 			isa = PBXGroup;
 			children = (
+				EB3ABBEB1C7A73A10054A82F /* RecordDrawingViewController.h */,
+				EB3ABBEC1C7A73A10054A82F /* RecordDrawingViewController.m */,
+				EB3ABBCF1C7A446C0054A82F /* ChooseColorCollectionViewController.h */,
+				EB3ABBD01C7A446C0054A82F /* ChooseColorCollectionViewController.m */,
+				EB3ABBEE1C7A76610054A82F /* ChooseColorCollectionViewCell.h */,
+				EB3ABBEF1C7A76610054A82F /* ChooseColorCollectionViewCell.m */,
 				EB3ABB9F1C7A32520054A82F /* AppDelegate.h */,
 				EB3ABBA01C7A32520054A82F /* AppDelegate.m */,
 				EB3ABBA21C7A32520054A82F /* ViewController.h */,
@@ -117,6 +134,7 @@
 		EB3ABB9C1C7A32520054A82F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB0032281C976AA5000FAAD2 /* serveimage.jpg */,
 				EB3ABB9D1C7A32520054A82F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -207,6 +225,7 @@
 				TargetAttributes = {
 					EB3ABB981C7A32520054A82F = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 64JXB3XQ2N;
 					};
 					EB3ABBB11C7A32530054A82F = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -244,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3ABBAC1C7A32520054A82F /* LaunchScreen.storyboard in Resources */,
+				EB0032291C976AA5000FAAD2 /* serveimage.jpg in Resources */,
 				EB3ABBA91C7A32520054A82F /* Assets.xcassets in Resources */,
 				EB3ABBA71C7A32520054A82F /* Main.storyboard in Resources */,
 			);
@@ -273,6 +293,9 @@
 				EB3ABBA41C7A32520054A82F /* ViewController.m in Sources */,
 				EB3ABBA11C7A32520054A82F /* AppDelegate.m in Sources */,
 				EB3ABB9E1C7A32520054A82F /* main.m in Sources */,
+				EB3ABBF01C7A76610054A82F /* ChooseColorCollectionViewCell.m in Sources */,
+				EB3ABBED1C7A73A10054A82F /* RecordDrawingViewController.m in Sources */,
+				EB3ABBD11C7A446C0054A82F /* ChooseColorCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -401,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,10 +436,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Draw My Life App 2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iridescentapps.drawmylifeapp2.Draw-My-Life-App-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeappsupremena;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +450,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Draw My Life App 2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iridescentapps.drawmylifeapp2.Draw-My-Life-App-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeappsupremena;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -498,6 +527,7 @@
 				EB3ABBC81C7A32530054A82F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB3ABBC91C7A32530054A82F /* Build configuration list for PBXNativeTarget "Draw My Life App 2Tests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +536,7 @@
 				EB3ABBCB1C7A32530054A82F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB3ABBCC1C7A32530054A82F /* Build configuration list for PBXNativeTarget "Draw My Life App 2UITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +545,7 @@
 				EB3ABBCE1C7A32530054A82F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
