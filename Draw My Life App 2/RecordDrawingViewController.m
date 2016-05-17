@@ -13,6 +13,20 @@
 //TO DO
 //TO DO
 
+enum {
+    BLACK = 1001,
+    BLUE,
+    RED ,
+    GREEN,
+    PURPLE,
+    ORANGE,
+    MAGENTA,
+    BROWN,
+    CYAN,
+    YELLOW,
+    WHITE
+    
+};
 
 ///////// Put in drawing code
 #import "RecordDrawingViewController.h"
@@ -36,6 +50,10 @@
     blue = 0.0/255.0;
     brush = 10.0;
     opacity = 1.0;
+    
+    NSInteger myNumber = WHITE;
+    
+    NSLog(@"%ld", (long)myNumber);
     
     [super viewDidLoad];
 }
