@@ -288,5 +288,56 @@ enum {
 
 
 - (IBAction)pencilButtonAction:(UIButton *)sender {
+    UIButton *colorButton  = sender;
+    
+    switch (sender.tag) {
+        case BLACK:
+            red = 255.0/255.0;
+            green = 255.0/255.0;
+            blue = 255.0/255.0;
+            break;
+        case BLUE:
+            red = 0.0/255.0;
+            green = 0/255.0;
+            blue = 255.0/255.0;
+            break;
+        case RED:
+            red = 255.0/255.0;
+            green = 0/255.0;
+            blue = 0.0/255.0;
+            break;
+        case GREEN:
+            red = 0.0/255.0;
+            green = 255.0/255.0;
+            blue = 0.0/255.0;
+            
+            break;
+        case PURPLE:
+            red = 127.0/255.0;
+            green = 0.0/255.0;
+            blue = 127.0/255.0;
+            break;
+        case ORANGE:
+            
+            break;
+        case MAGENTA:
+            
+            break;
+        case BROWN:
+            
+            break;
+        case CYAN:
+            
+            break;
+        case YELLOW:
+            
+            break;
+        case WHITE:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 @end
