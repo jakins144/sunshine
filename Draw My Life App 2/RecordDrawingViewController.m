@@ -14,7 +14,7 @@
 //TO DO
 
 enum {
-    BLACK = 1001,
+    BLACK = 1000,
     BLUE,
     RED ,
     GREEN,
@@ -64,64 +64,7 @@ enum {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (IBAction)pencilPressed:(id)sender {
-    
-    UIButton * PressedButton = (UIButton*)sender;
-    
-    switch(PressedButton.tag)
-    {
-        case 0:
-            red = 0.0/255.0;
-            green = 0.0/255.0;
-            blue = 0.0/255.0;
-            break;
-        case 1:
-            red = 105.0/255.0;
-            green = 105.0/255.0;
-            blue = 105.0/255.0;
-            break;
-        case 2:
-            red = 255.0/255.0;
-            green = 0.0/255.0;
-            blue = 0.0/255.0;
-            break;
-        case 3:
-            red = 0.0/255.0;
-            green = 0.0/255.0;
-            blue = 255.0/255.0;
-            break;
-        case 4:
-            red = 102.0/255.0;
-            green = 204.0/255.0;
-            blue = 0.0/255.0;
-            break;
-        case 5:
-            red = 102.0/255.0;
-            green = 255.0/255.0;
-            blue = 0.0/255.0;
-            break;
-        case 6:
-            red = 51.0/255.0;
-            green = 204.0/255.0;
-            blue = 255.0/255.0;
-            break;
-        case 7:
-            red = 160.0/255.0;
-            green = 82.0/255.0;
-            blue = 45.0/255.0;
-            break;
-        case 8:
-            red = 255.0/255.0;
-            green = 102.0/255.0;
-            blue = 0.0/255.0;
-            break;
-        case 9:
-            red = 255.0/255.0;
-            green = 255.0/255.0;
-            blue = 0.0/255.0;
-            break;
-    }
-}
+
 
 - (IBAction)eraserPressed:(id)sender {
     
@@ -290,15 +233,15 @@ enum {
 - (IBAction)pencilButtonAction:(UIButton *)sender {
     UIButton *colorButton  = sender;
     
-    switch (sender.tag) {
+    switch (colorButton.tag) {
         case BLACK:
-            red = 255.0/255.0;
-            green = 255.0/255.0;
-            blue = 255.0/255.0;
+            red = 0.0/255.0;
+            green = 0.0/255.0;
+            blue = 0.0/255.0;
             break;
         case BLUE:
             red = 0.0/255.0;
-            green = 0/255.0;
+            green = 0.0/255.0;
             blue = 255.0/255.0;
             break;
         case RED:
@@ -318,26 +261,56 @@ enum {
             blue = 127.0/255.0;
             break;
         case ORANGE:
-            
+            red = 255.0/255.0;
+            green = 127.0/255.0;
+            blue = 0.0/255.0;
             break;
         case MAGENTA:
+            red = 255.0/255.0;
+            green = 0.0/255.0;
+            blue = 255.0/255.0;
             
             break;
         case BROWN:
+            red = 153.0/255.0;
+            green = 102.0/255.0;
+            blue = 51.0/255.0;
             
             break;
         case CYAN:
+            red = 0.0/255.0;
+            green = 255.0/255.0;
+            blue = 255.0/255.0;
             
             break;
         case YELLOW:
-            
+            red = 255.0/255.0;
+            green = 255.0/255.0;
+            blue = 0.0/255.0;
             break;
         case WHITE:
-            
+            red = 255.0/255.0;
+            green = 255.0/255.0;
+            blue = 255.0/255.0;
             break;
             
         default:
             break;
     }
 }
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if ( event.subtype == UIEventSubtypeMotionShake )
+    {
+        // Put in code here to handle shake
+        self.mainImageView.image = nil;
+    }
+    
+    //if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
+        [super motionEnded:motion withEvent:event];
+}
+
+- (BOOL)canBecomeFirstResponder
+{ return YES; }
 @end
