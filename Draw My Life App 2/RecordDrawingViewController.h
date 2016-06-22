@@ -27,6 +27,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *greenMarkerButton;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *tempImageView;
+@property (weak, nonatomic) IBOutlet UIView *sizePickerView;
+- (IBAction)size1Action:(id)sender;
+- (IBAction)size2Action:(id)sender;
+- (IBAction)size3Action:(id)sender;
+- (IBAction)size4Action:(id)sender;
+
+
+
+
 
 - (IBAction)pencilButtonAction:(UIButton *)sender;
 

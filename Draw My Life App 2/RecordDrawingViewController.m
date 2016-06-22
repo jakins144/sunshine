@@ -5,10 +5,10 @@
 //  Created by Owner on 2/21/16.
 //  Copyright © 2016 Josh Akins. All rights reserved.
 //
-//TO DO
-//TO DO
-//TO DO
-//TO DO
+//TO DO ADD PENCIL RESIZING FUNCTIONALITY
+//TO DO ADD MARKER CHOOSER BAR HORIZONTAL SCROLLING
+//TO DO LOOK AT WHAT ELSE OLD APP HAD
+//TO DO ADD SCREEN RECORDING
 //TO DO
 //TO DO
 //TO DO
@@ -229,6 +229,18 @@ enum {
     }
 }
 
+
+- (IBAction)size1Action:(id)sender {
+}
+
+- (IBAction)size2Action:(id)sender {
+}
+
+- (IBAction)size3Action:(id)sender {
+}
+
+- (IBAction)size4Action:(id)sender {
+}
 
 - (IBAction)pencilButtonAction:(UIButton *)sender {
     UIButton *colorButton  = sender;
