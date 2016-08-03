@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ssz-uG-l51">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ssz-uG-l51">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -248,9 +248,26 @@
                                     <constraint firstAttribute="height" constant="55" id="xAG-fM-GWf"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xal-S5-Cxz">
+                                <rect key="frame" x="8" y="374" width="46" height="162"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="fUN-23-oE7"/>
+                                    <constraint firstAttribute="height" constant="162" id="uX0-Fo-rss"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-UN-KWX" userLabel="tempDrawImage">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgv-xa-udw">
                                 <rect key="frame" x="8" y="374" width="46" height="162"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NL1-sQ-WqS">
+                                        <rect key="frame" x="0.0" y="4" width="46" height="30"/>
+                                        <connections>
+                                            <action selector="size1Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="Ecc-8D-Na7"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTE-Zb-lMx">
                                         <rect key="frame" x="7" y="69" width="33" height="33"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -260,7 +277,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="size2Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="EQa-jk-AWJ"/>
+                                            <action selector="size3Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="EcB-9e-C9b"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIG-jR-RGa">
@@ -272,7 +289,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="size3Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="ftG-nR-mZa"/>
+                                            <action selector="size2Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="Sh7-hk-SZe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fu-ux-UBC">
@@ -284,7 +301,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="size4Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="HYB-JH-Iju"/>
+                                            <action selector="size1Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="Nc4-Yr-qyY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHc-ry-zPI">
@@ -296,19 +313,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="size1Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="Wkk-R6-E5Z"/>
+                                            <action selector="size4Action:" destination="cez-tQ-f4c" eventType="touchUpInside" id="GAz-5L-d7Z"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="NL1-sQ-WqS" firstAttribute="leading" secondItem="zgv-xa-udw" secondAttribute="leading" id="A3Q-jz-Qkw"/>
+                                    <constraint firstAttribute="trailing" secondItem="NL1-sQ-WqS" secondAttribute="trailing" id="KMV-DZ-i3y"/>
+                                    <constraint firstItem="NL1-sQ-WqS" firstAttribute="top" secondItem="zgv-xa-udw" secondAttribute="top" constant="4" id="RRn-WQ-POv"/>
                                     <constraint firstAttribute="width" constant="46" id="e7y-8Q-5dH"/>
                                     <constraint firstAttribute="height" constant="162" id="ml3-Ty-RYl"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-UN-KWX" userLabel="tempDrawImage">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -331,6 +348,8 @@
                             <constraint firstItem="2gy-iJ-KOr" firstAttribute="top" secondItem="JXd-Nf-QWl" secondAttribute="bottom" id="gqT-ZU-9cm"/>
                             <constraint firstItem="vhq-BF-vVg" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" id="gxq-OW-5AZ"/>
                             <constraint firstItem="JJw-mh-TKo" firstAttribute="top" secondItem="HYf-UN-KWX" secondAttribute="bottom" id="hJ8-3j-Hv4"/>
+                            <constraint firstItem="xal-S5-Cxz" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" constant="8" id="l9R-au-a9w"/>
+                            <constraint firstItem="Krg-gX-p35" firstAttribute="top" secondItem="xal-S5-Cxz" secondAttribute="bottom" constant="9" id="lSz-gE-Wdk"/>
                             <constraint firstItem="HYf-UN-KWX" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" id="u1e-T2-2yZ"/>
                             <constraint firstItem="HYf-UN-KWX" firstAttribute="top" secondItem="GXX-nT-L6X" secondAttribute="top" id="w5i-V9-TLr"/>
                             <constraint firstItem="Krg-gX-p35" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" id="wEF-Ru-TJp"/>

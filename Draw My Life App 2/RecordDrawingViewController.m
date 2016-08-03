@@ -231,15 +231,19 @@ enum {
 
 
 - (IBAction)size1Action:(id)sender {
+    brush = 10.0;
 }
 
 - (IBAction)size2Action:(id)sender {
+    brush = 20.0;
 }
 
 - (IBAction)size3Action:(id)sender {
+    brush = 30.0;
 }
 
 - (IBAction)size4Action:(id)sender {
+    brush = 40.0;
 }
 
 - (IBAction)pencilButtonAction:(UIButton *)sender {
