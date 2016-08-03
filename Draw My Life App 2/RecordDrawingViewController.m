@@ -41,8 +41,11 @@ enum {
 
 - (void)viewDidLoad
 {
-   
+    self.sizePickViewBackground.hidden = YES;
+    self.sizePickerView.hidden = YES;
     
+   
+    self.markerScrollView.contentSize = self.markerView.frame.size;
     self.mainImageView.backgroundColor = self.boardColor;
     
     red = 0.0/255.0;
@@ -246,6 +249,17 @@ enum {
     brush = 40.0;
 }
 
+- (IBAction)sizePicButtonAction:(id)sender {
+    
+    if (self.sizePickerView.hidden) {
+        [self showSizePicker];
+    }
+    else
+        [self hideSizePicker];
+    
+    
+}
+
 - (IBAction)pencilButtonAction:(UIButton *)sender {
     UIButton *colorButton  = sender;
     
@@ -315,6 +329,42 @@ enum {
     }
 }
 
+-(void)showSizePicker
+{
+    
+    self.sizePickViewBackground.alpha = 0.5;
+    self.sizePickerView.alpha = 1.0;
+    
+    self.sizePickViewBackground.hidden = NO;
+    self.sizePickerView.hidden = NO;
+    
+    
+   
+}
+
+-(void)hideSizePicker
+{
+   
+    
+    [UIView animateWithDuration:0.45 animations:^{self.sizePickerView.alpha = 0.0;}completion:^(BOOL finished) {
+        
+        //fade out
+        self.sizePickerView.hidden = YES;
+        
+    }];
+    
+    [UIView animateWithDuration:0.45 animations:^{self.sizePickViewBackground.alpha = 0.0;}completion:^(BOOL finished) {
+        
+        //fade out
+        self.sizePickViewBackground.hidden = YES;
+        
+    }];
+
+    
+    
+    
+}
+
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if ( event.subtype == UIEventSubtypeMotionShake )
@@ -329,4 +379,12 @@ enum {
 
 - (BOOL)canBecomeFirstResponder
 { return YES; }
+
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB0032291C976AA5000FAAD2 /* serveimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB0032281C976AA5000FAAD2 /* serveimage.jpg */; };
+		EB12FFA51D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB12FFA41D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m */; };
 		EB3ABB9E1C7A32520054A82F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABB9D1C7A32520054A82F /* main.m */; };
 		EB3ABBA11C7A32520054A82F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA01C7A32520054A82F /* AppDelegate.m */; };
 		EB3ABBA41C7A32520054A82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA31C7A32520054A82F /* ViewController.m */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		EB0032281C976AA5000FAAD2 /* serveimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = serveimage.jpg; sourceTree = "<group>"; };
+		EB12FFA41D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DMLNavCategory.m"; sourceTree = "<group>"; };
+		EB12FFA61D52A4C3005B68B4 /* UINavigationController+DMLNavCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DMLNavCategory.h"; sourceTree = "<group>"; };
 		EB3ABB991C7A32520054A82F /* Draw My Life App 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw My Life App 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3ABB9D1C7A32520054A82F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB3ABB9F1C7A32520054A82F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 		EB3ABB9B1C7A32520054A82F /* Draw My Life App 2 */ = {
 			isa = PBXGroup;
 			children = (
+				EB12FFA61D52A4C3005B68B4 /* UINavigationController+DMLNavCategory.h */,
+				EB12FFA41D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m */,
 				EB3ABBEB1C7A73A10054A82F /* RecordDrawingViewController.h */,
 				EB3ABBEC1C7A73A10054A82F /* RecordDrawingViewController.m */,
 				EB3ABBCF1C7A446C0054A82F /* ChooseColorCollectionViewController.h */,
@@ -294,6 +299,7 @@
 				EB3ABBA11C7A32520054A82F /* AppDelegate.m in Sources */,
 				EB3ABB9E1C7A32520054A82F /* main.m in Sources */,
 				EB3ABBF01C7A76610054A82F /* ChooseColorCollectionViewCell.m in Sources */,
+				EB12FFA51D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m in Sources */,
 				EB3ABBED1C7A73A10054A82F /* RecordDrawingViewController.m in Sources */,
 				EB3ABBD11C7A446C0054A82F /* ChooseColorCollectionViewController.m in Sources */,
 			);
