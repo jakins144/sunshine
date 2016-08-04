@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -243,7 +244,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Krg-gX-p35">
                                 <rect key="frame" x="0.0" y="545" width="600" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-9n-51l">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9R-vj-Hks">
+                                        <rect key="frame" x="71" y="13" width="49" height="30"/>
+                                        <state key="normal" title="Record"/>
+                                        <connections>
+                                            <action selector="recordButtonAction:" destination="cez-tQ-f4c" eventType="touchUpInside" id="wXF-nI-zh4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1000" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-9n-51l">
                                         <rect key="frame" x="8" y="6" width="44" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <userDefinedRuntimeAttributes>
@@ -258,7 +266,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="leading" id="sxm-Ml-eOQ"/>
                                     <constraint firstAttribute="height" constant="55" id="xAG-fM-GWf"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="z9R-vj-Hks" secondAttribute="bottom" constant="4" id="zTE-bC-nDp"/>
                                 </constraints>
                             </view>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xal-S5-Cxz">

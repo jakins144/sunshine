@@ -37,7 +37,9 @@
 - (IBAction)size2Action:(id)sender;
 - (IBAction)size3Action:(id)sender;
 - (IBAction)size4Action:(id)sender;
+- (IBAction)recordButtonAction:(id)sender;
 - (IBAction)sizePicButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *recordButtonAction;
 
 
 

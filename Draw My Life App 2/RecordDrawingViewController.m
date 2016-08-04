@@ -233,6 +233,21 @@ enum {
 }
 
 
+-(void)stopRecording
+{
+    
+    RPScreenRecorder *screenRecorder = [RPScreenRecorder sharedRecorder];
+    if (screenRecorder.available) {
+        [screenRecorder stopRecordingWithHandler:^(RPPreviewViewController * _Nullable previewViewController, NSError * _Nullable error) {
+            if (previewViewController != nil)
+            {
+                [self presentViewController:previewViewController animated:YES completion:nil];
+            }
+        }];
+    }
+    
+    
+}
 - (IBAction)size1Action:(id)sender {
     brush = 10.0;
 }
@@ -247,6 +262,15 @@ enum {
 
 - (IBAction)size4Action:(id)sender {
     brush = 40.0;
+}
+
+- (IBAction)recordButtonAction:(id)sender {
+     RPScreenRecorder *screenRecorder = [RPScreenRecorder sharedRecorder];
+    if (!screenRecorder.isRecording) {
+        [self startRecording];
+    }
+    else
+        [self stopRecording];
 }
 
 - (IBAction)sizePicButtonAction:(id)sender {
