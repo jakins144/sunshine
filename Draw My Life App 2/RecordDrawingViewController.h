@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ReplayKit/ReplayKit.h>
 #import "UINavigationController+DMLNavCategory.h"
+#import <CoreMotion/CoreMotion.h>
+#import "AppDelegate.h"
 
-@interface RecordDrawingViewController : UIViewController
+@interface RecordDrawingViewController : UIViewController <RPPreviewViewControllerDelegate,RPScreenRecorderDelegate, UIAccelerometerDelegate >
 {
     CGPoint lastPoint;
     CGFloat red;
@@ -22,6 +25,8 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UIButton *recordIndicator;
+
 @property (weak, nonatomic) IBOutlet UIView *markerView;
 @property (weak, nonatomic) IBOutlet UIScrollView *markerScrollView;
 @property (strong, nonatomic) UIColor *boardColor;
@@ -33,6 +38,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tempImageView;
 @property (weak, nonatomic) IBOutlet UIView *sizePickerView;
 @property (weak, nonatomic) IBOutlet UIView *sizePickViewBackground;
+
+@property (strong, nonatomic) UIWindow *window2;
+
 - (IBAction)size1Action:(id)sender;
 - (IBAction)size2Action:(id)sender;
 - (IBAction)size3Action:(id)sender;

@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="3161" y="512"/>
         </scene>
-        <!--Record Drawing View Controller-->
+        <!--Record, Draw and Narrate-->
         <scene sceneID="3Rb-LB-AuY">
             <objects>
-                <viewController id="cez-tQ-f4c" customClass="RecordDrawingViewController" sceneMemberID="viewController">
+                <viewController title="Record, Draw and Narrate" id="cez-tQ-f4c" customClass="RecordDrawingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JXd-Nf-QWl"/>
                         <viewControllerLayoutGuide type="bottom" id="JJw-mh-TKo"/>
@@ -244,16 +244,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Krg-gX-p35">
                                 <rect key="frame" x="0.0" y="545" width="600" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9R-vj-Hks">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9R-vj-Hks">
                                         <rect key="frame" x="71" y="13" width="49" height="30"/>
                                         <state key="normal" title="Record"/>
                                         <connections>
                                             <action selector="recordButtonAction:" destination="cez-tQ-f4c" eventType="touchUpInside" id="wXF-nI-zh4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1000" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-9n-51l">
+                                    <button opaque="NO" tag="1000" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-9n-51l">
                                         <rect key="frame" x="8" y="6" width="44" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="JKU-1i-3au"/>
+                                            <constraint firstAttribute="width" constant="44" id="aby-vT-0lM"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="22"/>
@@ -266,10 +270,20 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="leading" id="K08-ro-dq8"/>
+                                    <constraint firstItem="vcH-9n-51l" firstAttribute="leading" secondItem="Krg-gX-p35" secondAttribute="leadingMargin" id="O2x-DM-WC9"/>
+                                    <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="trailing" constant="19" id="dS8-qq-00W"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="vcH-9n-51l" secondAttribute="bottom" constant="3" id="dpC-vB-gqt"/>
                                     <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="leading" id="sxm-Ml-eOQ"/>
                                     <constraint firstAttribute="height" constant="55" id="xAG-fM-GWf"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="z9R-vj-Hks" secondAttribute="bottom" constant="4" id="zTE-bC-nDp"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="K08-ro-dq8"/>
+                                        <exclude reference="sxm-Ml-eOQ"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xal-S5-Cxz">
                                 <rect key="frame" x="8" y="374" width="46" height="162"/>
@@ -349,6 +363,25 @@
                                     <constraint firstAttribute="height" constant="162" id="ml3-Ty-RYl"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAE-Bi-xFf">
+                                <rect key="frame" x="536" y="127" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="V7q-Co-HHp"/>
+                                    <constraint firstAttribute="height" constant="44" id="q2C-yG-b0q"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -365,6 +398,7 @@
                             <constraint firstItem="vhq-BF-vVg" firstAttribute="top" secondItem="GXX-nT-L6X" secondAttribute="top" id="UOg-qP-uSL"/>
                             <constraint firstItem="zgv-xa-udw" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" constant="8" id="UgT-8B-Mzs"/>
                             <constraint firstItem="Krg-gX-p35" firstAttribute="top" secondItem="zgv-xa-udw" secondAttribute="bottom" constant="9" id="UrL-To-d1w"/>
+                            <constraint firstItem="WAE-Bi-xFf" firstAttribute="top" secondItem="uWI-Uy-Zy9" secondAttribute="bottom" constant="8" id="V28-8J-ztb"/>
                             <constraint firstAttribute="trailing" secondItem="2zb-8z-sax" secondAttribute="trailing" id="YSL-86-E9N"/>
                             <constraint firstAttribute="trailing" secondItem="HYf-UN-KWX" secondAttribute="trailing" id="eUQ-Ce-nmD"/>
                             <constraint firstItem="vhq-BF-vVg" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" id="gxq-OW-5AZ"/>
@@ -372,6 +406,7 @@
                             <constraint firstItem="uWI-Uy-Zy9" firstAttribute="leading" secondItem="r9y-fe-4B2" secondAttribute="leading" id="juc-G8-K5K"/>
                             <constraint firstItem="xal-S5-Cxz" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" constant="8" id="l9R-au-a9w"/>
                             <constraint firstItem="Krg-gX-p35" firstAttribute="top" secondItem="xal-S5-Cxz" secondAttribute="bottom" constant="9" id="lSz-gE-Wdk"/>
+                            <constraint firstAttribute="trailing" secondItem="WAE-Bi-xFf" secondAttribute="trailing" constant="20" id="njp-DY-sca"/>
                             <constraint firstItem="HYf-UN-KWX" firstAttribute="leading" secondItem="GXX-nT-L6X" secondAttribute="leading" id="u1e-T2-2yZ"/>
                             <constraint firstAttribute="trailing" secondItem="uWI-Uy-Zy9" secondAttribute="trailing" id="vYH-aA-iNr"/>
                             <constraint firstItem="HYf-UN-KWX" firstAttribute="top" secondItem="GXX-nT-L6X" secondAttribute="top" id="w5i-V9-TLr"/>
@@ -392,6 +427,7 @@
                         <outlet property="mainImageView" destination="vhq-BF-vVg" id="nyH-Uh-iiJ"/>
                         <outlet property="markerScrollView" destination="uWI-Uy-Zy9" id="p72-9w-0Vk"/>
                         <outlet property="markerView" destination="2gy-iJ-KOr" id="37D-4N-SEh"/>
+                        <outlet property="recordIndicator" destination="WAE-Bi-xFf" id="DHj-cR-cZl"/>
                         <outlet property="sizePickViewBackground" destination="xal-S5-Cxz" id="SMK-iy-0jT"/>
                         <outlet property="sizePickerView" destination="zgv-xa-udw" id="KkU-Tz-wwd"/>
                         <outlet property="tempImageView" destination="HYf-UN-KWX" id="K4q-qF-EaA"/>

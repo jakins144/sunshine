@@ -31,9 +31,12 @@ enum {
 ///////// Put in drawing code
 #import "RecordDrawingViewController.h"
 
-#import <ReplayKit/ReplayKit.h>
+
 
 @interface RecordDrawingViewController ()
+{
+    BOOL downMotionTriggered;
+}
 
 @end
 
@@ -41,10 +44,17 @@ enum {
 
 - (void)viewDidLoad
 {
+    
+    
+  //  self.recordIndicator.hidden = YES;
+   
+    
+    [super viewDidLoad];
+    
     self.sizePickViewBackground.hidden = YES;
     self.sizePickerView.hidden = YES;
     
-   
+    
     self.markerScrollView.contentSize = self.markerView.frame.size;
     self.mainImageView.backgroundColor = self.boardColor;
     
@@ -58,9 +68,29 @@ enum {
     
     NSLog(@"%ld", (long)myNumber);
     
-    [super viewDidLoad];
+    self.recordIndicator.hidden = YES;
+    
+    
+    downMotionTriggered = NO;
+    
+    
+    
+    
+    
+//    self.window2 = [[UIWindow alloc] initWithFrame:self.view.frame];
+//    
+//    [self.window2.rootViewController.view addSubview:self.recordIndicator];
+//    [self.window2 setMultipleTouchEnabled:YES];
+//    
+//    [self.window2 makeKeyAndVisible];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
+    [self startUpdatesWithSliderValue:15];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -218,17 +248,35 @@ enum {
 -(void)startRecording
 {
     RPScreenRecorder *screenRecorder = [RPScreenRecorder sharedRecorder];
+    screenRecorder.delegate = self;
     
     if (screenRecorder.available) {
+       // [self stopUpdates];
+        [[self navigationController] setNavigationBarHidden:YES animated:YES];
         [screenRecorder startRecordingWithMicrophoneEnabled:YES handler:^(NSError * _Nullable error) {
             if (error == nil) {
                 NSLog(@"lets break this down");
+              //  self.recordIndicator.hidden = NO;
             }
             else
             {
-                NSLog(@"there was an error recording");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Recording error"
+                                                                message:error.description
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
             }
         }];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Recording unavailable"
+                                                        message:@"Please make sure that your device supports Replay Kit and that AirPlay and TV-Out is not in use."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
@@ -239,8 +287,11 @@ enum {
     RPScreenRecorder *screenRecorder = [RPScreenRecorder sharedRecorder];
     if (screenRecorder.available) {
         [screenRecorder stopRecordingWithHandler:^(RPPreviewViewController * _Nullable previewViewController, NSError * _Nullable error) {
+            [[self navigationController] setNavigationBarHidden:NO animated:YES];
+            self.recordIndicator.hidden = YES;
             if (previewViewController != nil)
             {
+                previewViewController.previewControllerDelegate = self;
                 [self presentViewController:previewViewController animated:YES completion:nil];
             }
         }];
@@ -265,7 +316,12 @@ enum {
 }
 
 - (IBAction)recordButtonAction:(id)sender {
-     RPScreenRecorder *screenRecorder = [RPScreenRecorder sharedRecorder];
+    [self toggleRecording];
+}
+
+-(void)toggleRecording
+{
+    RPScreenRecorder *screenRecorder = [RPScreenRecorder sharedRecorder];
     if (!screenRecorder.isRecording) {
         [self startRecording];
     }
@@ -399,6 +455,99 @@ enum {
     
     //if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
         [super motionEnded:motion withEvent:event];
+}
+
+
+
+- (void)previewControllerDidFinish:(RPPreviewViewController *)previewController
+{
+    
+    
+    [previewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark --- Acceleration Start and Stop ----------------------------
+
+- (void)startUpdatesWithSliderValue:(int)sliderValue {
+    
+    NSTimeInterval deviceMotionMin = 0.01;
+    NSTimeInterval delta = 0.005;
+    NSTimeInterval updateInterval = deviceMotionMin + delta * sliderValue;
+    
+    CMMotionManager *mManager = [(AppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
+    
+    
+    if ([mManager isDeviceMotionAvailable] == YES) {
+        [mManager setDeviceMotionUpdateInterval:updateInterval];
+        [mManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
+            // attitude
+            // [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeAttitude] addX:deviceMotion.attitude.roll y:deviceMotion.attitude.pitch z:deviceMotion.attitude.yaw];
+            //            //rotationRate
+            //            [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeRotationRate] addX:deviceMotion.rotationRate.x y:deviceMotion.rotationRate.y z:deviceMotion.rotationRate.z];
+            //            // gravity
+            //            [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeGravity] addX:deviceMotion.gravity.x y:deviceMotion.gravity.y z:deviceMotion.gravity.z];
+            //            // userAcceleration
+            //            [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeUserAcceleration] addX:deviceMotion.userAcceleration.x y:deviceMotion.userAcceleration.y z:deviceMotion.userAcceleration.z];
+            // NSLog(@"roll is: %f", deviceMotion.attitude.roll);
+            
+            if (deviceMotion.attitude.roll <= -3 && downMotionTriggered == NO) {
+                [self toggleRecording];
+                downMotionTriggered = YES;
+                
+            }
+            
+            if (deviceMotion.attitude.roll >= 0.9 && downMotionTriggered == YES) {
+                downMotionTriggered = NO;
+            }
+            
+        }];
+    }
+    
+    //    self.graphLabel.text = [self.graphTitles objectAtIndex:[self.segmentedControl selectedSegmentIndex]];
+    //    self.updateIntervalLabel.text = [NSString stringWithFormat:@"%f", updateInterval];
+}
+
+- (CMMotionManager *)motionManager
+{
+    CMMotionManager *motionManager = nil;
+    
+    id appDelegate = [UIApplication sharedApplication].delegate;
+    
+    if ([appDelegate respondsToSelector:@selector(motionManager)]) {
+        motionManager = [appDelegate motionManager];
+    }
+    
+    return motionManager;
+}
+
+- (void)stopUpdates {
+    
+    CMMotionManager *mManager = [(AppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
+    
+    if ([mManager isDeviceMotionActive] == YES) {
+        
+        [mManager stopDeviceMotionUpdates];
+        
+    }
+    
+}
+
+
+- (void)screenRecorder:(RPScreenRecorder *)screenRecorder
+didStopRecordingWithError:(NSError *)error
+ previewViewController:(RPPreviewViewController *)previewViewController
+{
+    
+    if (error) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Recording stopped due to error"
+                                                        message:error.description
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    self.recordIndicator.hidden = YES;
 }
 
 - (BOOL)canBecomeFirstResponder
