@@ -31,11 +31,12 @@ enum {
 ///////// Put in drawing code
 #import "RecordDrawingViewController.h"
 
-
+const NSUInteger BAR_ANIMATION_LENGTH = 200;
 
 @interface RecordDrawingViewController ()
 {
     BOOL downMotionTriggered;
+    BOOL isBarsHidden;
 }
 
 @end
@@ -49,7 +50,16 @@ enum {
   //  self.recordIndicator.hidden = YES;
    
     
+    
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doDoubleTap)] ;
+    doubleTap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:doubleTap];
+    
+    //[singleTap requireGestureRecognizerToFail:doubleTap];
+    
+    isBarsHidden = NO;
     
     self.sizePickViewBackground.hidden = YES;
     self.sizePickerView.hidden = YES;
@@ -73,7 +83,7 @@ enum {
     
     downMotionTriggered = NO;
     
-    
+    isBarsHidden = NO;
     
     
     
@@ -289,10 +299,16 @@ enum {
         [screenRecorder stopRecordingWithHandler:^(RPPreviewViewController * _Nullable previewViewController, NSError * _Nullable error) {
             [[self navigationController] setNavigationBarHidden:NO animated:YES];
             self.recordIndicator.hidden = YES;
+        
             if (previewViewController != nil)
             {
                 previewViewController.previewControllerDelegate = self;
                 [self presentViewController:previewViewController animated:YES completion:nil];
+                
+                NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:previewViewController];
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:encodedObject forKey:@"pvController"];
+                [defaults synchronize];
             }
         }];
     }
@@ -337,6 +353,12 @@ enum {
     else
         [self hideSizePicker];
     
+    
+}
+
+- (IBAction)clearButtonAction:(id)sender {
+    
+    self.mainImageView.image = nil;
     
 }
 
@@ -557,6 +579,40 @@ didStopRecordingWithError:(NSError *)error
 - (BOOL)shouldAutorotate
 {
     return NO;
+}
+
+
+- (void)doDoubleTap
+{
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         if (isBarsHidden == NO) {
+                             [self hideSizePicker];
+                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y - BAR_ANIMATION_LENGTH);
+                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y - BAR_ANIMATION_LENGTH);
+                             
+                             
+                             
+                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y + BAR_ANIMATION_LENGTH);
+                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y + BAR_ANIMATION_LENGTH);
+                             isBarsHidden = YES;
+                             [self hideSizePicker];
+                             
+                         }
+                         else
+                         {
+                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y + BAR_ANIMATION_LENGTH);
+                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y + BAR_ANIMATION_LENGTH);
+                             
+                             
+                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y - BAR_ANIMATION_LENGTH);
+                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y - BAR_ANIMATION_LENGTH);
+                             isBarsHidden = NO;
+                         }
+                         
+                         
+                         
+                     }];
 }
 
 

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ReplayKit/ReplayKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<RPPreviewViewControllerDelegate>
+- (IBAction)lastDrawMyLifeButtonAction:(id)sender;
 
 
 @end

@@ -25,6 +25,18 @@
 
 
 
+- (IBAction)handelDoubleTap:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UIView *bottomBarBackgroundView;
+
+@property (weak, nonatomic) IBOutlet UIView *bottomBarView;
+@property (weak, nonatomic) IBOutlet UIView *markerBackgroundView;
+
+
+
+
+
 @property (weak, nonatomic) IBOutlet UIButton *recordIndicator;
 
 @property (weak, nonatomic) IBOutlet UIView *markerView;
@@ -49,6 +61,7 @@
 - (IBAction)sizePicButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *recordButtonAction;
 
+- (IBAction)clearButtonAction:(id)sender;
 
 
 
