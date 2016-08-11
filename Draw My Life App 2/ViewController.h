@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <ReplayKit/ReplayKit.h>
+#import "TutorialTourViewController.h"
+@import MessageUI;
 
-@interface ViewController : UIViewController<RPPreviewViewControllerDelegate>
+@interface ViewController : UIViewController<RPPreviewViewControllerDelegate,MFMailComposeViewControllerDelegate>
 - (IBAction)lastDrawMyLifeButtonAction:(id)sender;
+
+- (IBAction)feedbackButtonAction:(id)sender;
 
 
 @end

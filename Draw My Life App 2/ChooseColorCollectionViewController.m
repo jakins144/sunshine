@@ -19,6 +19,14 @@ static NSString * const reuseIdentifier = @"colorCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Choose Background Color";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Choose orientation and color"
+                                                    message:@"Turn your device to the orientation that you want: portrait or landscape, then tap a color."
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+    [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:10.0f];
     
     self.colorArray = [[NSMutableArray alloc]init];
     
@@ -48,7 +56,7 @@ static NSString * const reuseIdentifier = @"colorCell";
     [self.colorArray addObject: brown];
     [self.colorArray addObject: cyan];
     [self.colorArray addObject: yellow];
-    [self.colorArray addObject: lightGray];
+  //  [self.colorArray addObject: lightGray];
     [self.colorArray addObject: black];   
 
     
@@ -61,6 +69,18 @@ static NSString * const reuseIdentifier = @"colorCell";
     // Do any additional setup after loading the view.
 }
 
+
+
+-(void)dismissAlert:(UIAlertView *) alertView
+{
+    [alertView dismissWithClickedButtonIndex:0 animated:YES];
+  
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -57,7 +57,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     doubleTap.numberOfTapsRequired = 2;
     [self.view addGestureRecognizer:doubleTap];
     
-    //[singleTap requireGestureRecognizerToFail:doubleTap];
+   // [singleTap requireGestureRecognizerToFail:doubleTap];
     
     isBarsHidden = NO;
     
@@ -262,6 +262,8 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     
     if (screenRecorder.available) {
        // [self stopUpdates];
+        
+        [self.recordButton setBackgroundImage:[UIImage imageNamed:@"stop-512-sm.png"] forState:UIControlStateNormal];
         [[self navigationController] setNavigationBarHidden:YES animated:YES];
         [screenRecorder startRecordingWithMicrophoneEnabled:YES handler:^(NSError * _Nullable error) {
             if (error == nil) {
@@ -299,6 +301,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
         [screenRecorder stopRecordingWithHandler:^(RPPreviewViewController * _Nullable previewViewController, NSError * _Nullable error) {
             [[self navigationController] setNavigationBarHidden:NO animated:YES];
             self.recordIndicator.hidden = YES;
+            [self.recordButton setBackgroundImage:[UIImage imageNamed:@"redcircle2.png"] forState:UIControlStateNormal];
         
             if (previewViewController != nil)
             {
@@ -317,18 +320,22 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
 }
 - (IBAction)size1Action:(id)sender {
     brush = 10.0;
+    [self hideSizePicker];
 }
 
 - (IBAction)size2Action:(id)sender {
     brush = 20.0;
+    [self hideSizePicker];
 }
 
 - (IBAction)size3Action:(id)sender {
     brush = 30.0;
+    [self hideSizePicker];
 }
 
 - (IBAction)size4Action:(id)sender {
     brush = 40.0;
+    [self hideSizePicker];
 }
 
 - (IBAction)recordButtonAction:(id)sender {
@@ -447,7 +454,6 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
 -(void)hideSizePicker
 {
    
-    
     [UIView animateWithDuration:0.45 animations:^{self.sizePickerView.alpha = 0.0;}completion:^(BOOL finished) {
         
         //fade out
@@ -462,7 +468,6 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
         
     }];
 
-    
     
     
 }
@@ -568,6 +573,7 @@ didStopRecordingWithError:(NSError *)error
                                               otherButtonTitles:nil];
         [alert show];
     }
+    [self.recordButton setBackgroundImage:[UIImage imageNamed:@"redcircle2.png"] forState:UIControlStateNormal];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.recordIndicator.hidden = YES;
 }

@@ -32,6 +32,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 @property (weak, nonatomic) IBOutlet UIView *markerBackgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 
 
 

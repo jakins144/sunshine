@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		EB0032291C976AA5000FAAD2 /* serveimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB0032281C976AA5000FAAD2 /* serveimage.jpg */; };
 		EB12FFA51D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB12FFA41D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m */; };
+		EB1D95EF1D5D00E1006CD1C6 /* pencilthicknessT.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D95EC1D5D00E1006CD1C6 /* pencilthicknessT.png */; };
+		EB1D95F01D5D00E1006CD1C6 /* previewscreenT.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D95ED1D5D00E1006CD1C6 /* previewscreenT.png */; };
+		EB1D95F11D5D00E1006CD1C6 /* shareT.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D95EE1D5D00E1006CD1C6 /* shareT.png */; };
+		EB1D95F31D5D0100006CD1C6 /* realRecordT.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D95F21D5D0100006CD1C6 /* realRecordT.png */; };
+		EB1D95F51D5D03C7006CD1C6 /* choosebackgroundT.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D95F41D5D03C7006CD1C6 /* choosebackgroundT.png */; };
+		EB1D95F91D5D16C1006CD1C6 /* TutorialTourPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D95F81D5D16C1006CD1C6 /* TutorialTourPageViewController.m */; };
+		EB1D95FC1D5D1733006CD1C6 /* TutorialTourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D95FB1D5D1733006CD1C6 /* TutorialTourViewController.m */; };
+		EB1D95FF1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D95FE1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m */; };
 		EB3ABB9E1C7A32520054A82F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABB9D1C7A32520054A82F /* main.m */; };
 		EB3ABBA11C7A32520054A82F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA01C7A32520054A82F /* AppDelegate.m */; };
 		EB3ABBA41C7A32520054A82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA31C7A32520054A82F /* ViewController.m */; };
@@ -31,6 +39,15 @@
 		EB8221031D599EB20041A4D6 /* marker_cyan.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8220FF1D599EB20041A4D6 /* marker_cyan.png */; };
 		EB8221041D599EB20041A4D6 /* marker_magenta.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8221001D599EB20041A4D6 /* marker_magenta.png */; };
 		EB8221051D599EB20041A4D6 /* marker_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8221011D599EB20041A4D6 /* marker_yellow.png */; };
+		EBBC3BFC1D5AD7B50071DB76 /* stop-512-sm.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3BFA1D5AD7B50071DB76 /* stop-512-sm.png */; };
+		EBBC3BFE1D5ADB5A0071DB76 /* redcircle2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3BFD1D5ADB5A0071DB76 /* redcircle2.png */; };
+		EBBC3C041D5AF1660071DB76 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3C031D5AF1660071DB76 /* clear.png */; };
+		EBBC3C061D5BA1A10071DB76 /* Draw My Life!.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3C051D5BA1A10071DB76 /* Draw My Life!.png */; };
+		EBBC3C081D5BA2760071DB76 /* Feedback!.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3C071D5BA2760071DB76 /* Feedback!.png */; };
+		EBBC3C0A1D5BAEA50071DB76 /* Feedback!1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3C091D5BAEA50071DB76 /* Feedback!1.png */; };
+		EBBC3C0C1D5BB0E50071DB76 /* Draw My Life!1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3C0B1D5BB0E50071DB76 /* Draw My Life!1.png */; };
+		EBBC3C101D5BBB2C0071DB76 /* redGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3C0F1D5BBB2C0071DB76 /* redGradient.png */; };
+		EBBC3C121D5BC15C0071DB76 /* DML2!Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBC3C111D5BC15C0071DB76 /* DML2!Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +71,17 @@
 		EB0032281C976AA5000FAAD2 /* serveimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = serveimage.jpg; sourceTree = "<group>"; };
 		EB12FFA41D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DMLNavCategory.m"; sourceTree = "<group>"; };
 		EB12FFA61D52A4C3005B68B4 /* UINavigationController+DMLNavCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DMLNavCategory.h"; sourceTree = "<group>"; };
+		EB1D95EC1D5D00E1006CD1C6 /* pencilthicknessT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencilthicknessT.png; sourceTree = "<group>"; };
+		EB1D95ED1D5D00E1006CD1C6 /* previewscreenT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previewscreenT.png; sourceTree = "<group>"; };
+		EB1D95EE1D5D00E1006CD1C6 /* shareT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareT.png; sourceTree = "<group>"; };
+		EB1D95F21D5D0100006CD1C6 /* realRecordT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = realRecordT.png; sourceTree = "<group>"; };
+		EB1D95F41D5D03C7006CD1C6 /* choosebackgroundT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choosebackgroundT.png; sourceTree = "<group>"; };
+		EB1D95F71D5D16C1006CD1C6 /* TutorialTourPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialTourPageViewController.h; sourceTree = "<group>"; };
+		EB1D95F81D5D16C1006CD1C6 /* TutorialTourPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialTourPageViewController.m; sourceTree = "<group>"; };
+		EB1D95FA1D5D1733006CD1C6 /* TutorialTourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialTourViewController.h; sourceTree = "<group>"; };
+		EB1D95FB1D5D1733006CD1C6 /* TutorialTourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialTourViewController.m; sourceTree = "<group>"; };
+		EB1D95FD1D5D180F006CD1C6 /* TutorialTourPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialTourPageContentViewController.h; sourceTree = "<group>"; };
+		EB1D95FE1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialTourPageContentViewController.m; sourceTree = "<group>"; };
 		EB3ABB991C7A32520054A82F /* Draw My Life App 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw My Life App 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3ABB9D1C7A32520054A82F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB3ABB9F1C7A32520054A82F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +115,15 @@
 		EB8220FF1D599EB20041A4D6 /* marker_cyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_cyan.png; sourceTree = "<group>"; };
 		EB8221001D599EB20041A4D6 /* marker_magenta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_magenta.png; sourceTree = "<group>"; };
 		EB8221011D599EB20041A4D6 /* marker_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_yellow.png; sourceTree = "<group>"; };
+		EBBC3BFA1D5AD7B50071DB76 /* stop-512-sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-512-sm.png"; sourceTree = "<group>"; };
+		EBBC3BFD1D5ADB5A0071DB76 /* redcircle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redcircle2.png; sourceTree = "<group>"; };
+		EBBC3C031D5AF1660071DB76 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear.png; sourceTree = "<group>"; };
+		EBBC3C051D5BA1A10071DB76 /* Draw My Life!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Draw My Life!.png"; sourceTree = "<group>"; };
+		EBBC3C071D5BA2760071DB76 /* Feedback!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Feedback!.png"; sourceTree = "<group>"; };
+		EBBC3C091D5BAEA50071DB76 /* Feedback!1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Feedback!1.png"; sourceTree = "<group>"; };
+		EBBC3C0B1D5BB0E50071DB76 /* Draw My Life!1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Draw My Life!1.png"; sourceTree = "<group>"; };
+		EBBC3C0F1D5BBB2C0071DB76 /* redGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redGradient.png; sourceTree = "<group>"; };
+		EBBC3C111D5BC15C0071DB76 /* DML2!Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DML2!Logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +187,12 @@
 				EB3ABBA21C7A32520054A82F /* ViewController.h */,
 				EB3ABBA31C7A32520054A82F /* ViewController.m */,
 				EB3ABBA51C7A32520054A82F /* Main.storyboard */,
+				EB1D95FD1D5D180F006CD1C6 /* TutorialTourPageContentViewController.h */,
+				EB1D95FE1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m */,
+				EB1D95FA1D5D1733006CD1C6 /* TutorialTourViewController.h */,
+				EB1D95FB1D5D1733006CD1C6 /* TutorialTourViewController.m */,
+				EB1D95F71D5D16C1006CD1C6 /* TutorialTourPageViewController.h */,
+				EB1D95F81D5D16C1006CD1C6 /* TutorialTourPageViewController.m */,
 				EB3ABBA81C7A32520054A82F /* Assets.xcassets */,
 				EB3ABBAA1C7A32520054A82F /* LaunchScreen.storyboard */,
 				EB3ABBAD1C7A32520054A82F /* Info.plist */,
@@ -161,6 +204,20 @@
 		EB3ABB9C1C7A32520054A82F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB1D95F41D5D03C7006CD1C6 /* choosebackgroundT.png */,
+				EB1D95F21D5D0100006CD1C6 /* realRecordT.png */,
+				EB1D95EC1D5D00E1006CD1C6 /* pencilthicknessT.png */,
+				EB1D95ED1D5D00E1006CD1C6 /* previewscreenT.png */,
+				EB1D95EE1D5D00E1006CD1C6 /* shareT.png */,
+				EBBC3C111D5BC15C0071DB76 /* DML2!Logo.png */,
+				EBBC3C0F1D5BBB2C0071DB76 /* redGradient.png */,
+				EBBC3C0B1D5BB0E50071DB76 /* Draw My Life!1.png */,
+				EBBC3C091D5BAEA50071DB76 /* Feedback!1.png */,
+				EBBC3C051D5BA1A10071DB76 /* Draw My Life!.png */,
+				EBBC3C071D5BA2760071DB76 /* Feedback!.png */,
+				EBBC3C031D5AF1660071DB76 /* clear.png */,
+				EBBC3BFD1D5ADB5A0071DB76 /* redcircle2.png */,
+				EBBC3BFA1D5AD7B50071DB76 /* stop-512-sm.png */,
 				EB8220FE1D599EB20041A4D6 /* marker_brown.png */,
 				EB8220FF1D599EB20041A4D6 /* marker_cyan.png */,
 				EB8221001D599EB20041A4D6 /* marker_magenta.png */,
@@ -300,19 +357,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBC3C101D5BBB2C0071DB76 /* redGradient.png in Resources */,
 				EB8220FD1D5997260041A4D6 /* marker_purple.png in Resources */,
 				EB8221051D599EB20041A4D6 /* marker_yellow.png in Resources */,
+				EB1D95F51D5D03C7006CD1C6 /* choosebackgroundT.png in Resources */,
 				EB8221031D599EB20041A4D6 /* marker_cyan.png in Resources */,
 				EB3ABBAC1C7A32520054A82F /* LaunchScreen.storyboard in Resources */,
 				EB8220FA1D5997260041A4D6 /* marker_black.png in Resources */,
+				EB1D95F11D5D00E1006CD1C6 /* shareT.png in Resources */,
 				EB0032291C976AA5000FAAD2 /* serveimage.jpg in Resources */,
+				EB1D95F01D5D00E1006CD1C6 /* previewscreenT.png in Resources */,
 				EB3ABBA91C7A32520054A82F /* Assets.xcassets in Resources */,
 				EB8220F91D5997260041A4D6 /* marker_green.png in Resources */,
 				EB8220FB1D5997260041A4D6 /* marker_blue.png in Resources */,
+				EBBC3C041D5AF1660071DB76 /* clear.png in Resources */,
 				EB8220F81D5997260041A4D6 /* marker_white.png in Resources */,
+				EBBC3BFE1D5ADB5A0071DB76 /* redcircle2.png in Resources */,
 				EB8221021D599EB20041A4D6 /* marker_brown.png in Resources */,
+				EBBC3C0C1D5BB0E50071DB76 /* Draw My Life!1.png in Resources */,
+				EB1D95EF1D5D00E1006CD1C6 /* pencilthicknessT.png in Resources */,
 				EB8220F71D5997260041A4D6 /* marker_red.png in Resources */,
+				EBBC3C0A1D5BAEA50071DB76 /* Feedback!1.png in Resources */,
+				EBBC3C121D5BC15C0071DB76 /* DML2!Logo.png in Resources */,
+				EBBC3C081D5BA2760071DB76 /* Feedback!.png in Resources */,
+				EBBC3BFC1D5AD7B50071DB76 /* stop-512-sm.png in Resources */,
+				EBBC3C061D5BA1A10071DB76 /* Draw My Life!.png in Resources */,
 				EB3ABBA71C7A32520054A82F /* Main.storyboard in Resources */,
+				EB1D95F31D5D0100006CD1C6 /* realRecordT.png in Resources */,
 				EB8220FC1D5997260041A4D6 /* marker_orange_.png in Resources */,
 				EB8221041D599EB20041A4D6 /* marker_magenta.png in Resources */,
 			);
@@ -341,6 +412,9 @@
 			files = (
 				EB3ABBA41C7A32520054A82F /* ViewController.m in Sources */,
 				EB3ABBA11C7A32520054A82F /* AppDelegate.m in Sources */,
+				EB1D95F91D5D16C1006CD1C6 /* TutorialTourPageViewController.m in Sources */,
+				EB1D95FF1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m in Sources */,
+				EB1D95FC1D5D1733006CD1C6 /* TutorialTourViewController.m in Sources */,
 				EB3ABB9E1C7A32520054A82F /* main.m in Sources */,
 				EB3ABBF01C7A76610054A82F /* ChooseColorCollectionViewCell.m in Sources */,
 				EB12FFA51D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m in Sources */,
@@ -489,6 +563,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Draw My Life App 2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeappsupremena;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,6 +578,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Draw My Life App 2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeappsupremena;
 				PRODUCT_NAME = "$(TARGET_NAME)";
