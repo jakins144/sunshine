@@ -10,7 +10,7 @@
 #import "TutorialTourPageContentViewController.h"
 #import "TutorialTourPageViewController.h"
 #import "AppDelegate.h"
-
+#import "RecordScreenControlsViewController.h"
 @interface TutorialTourViewController : UIViewController<UIPageViewControllerDataSource>
 @property (strong, nonatomic)  TutorialTourPageViewController *pageViewController;
 @property (strong, nonatomic)NSMutableArray *messagesArray;

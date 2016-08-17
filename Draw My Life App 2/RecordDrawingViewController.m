@@ -85,7 +85,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     
     isBarsHidden = NO;
     
-    
+    self.prevImage = self.tempImageView.image;
     
 //    self.window2 = [[UIWindow alloc] initWithFrame:self.view.frame];
 //    
@@ -93,6 +93,15 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
 //    [self.window2 setMultipleTouchEnabled:YES];
 //    
 //    [self.window2 makeKeyAndVisible];
+}
+
+- (void)setImage:(UIImage*)currentImage fromImage:(UIImage*)preImage
+{
+    // Prepare undo-redo
+    [[self.undoManager prepareWithInvocationTarget:self] setImage:preImage fromImage:currentImage];
+    self.mainImageView.image = currentImage;
+    self.tempImageView.image = currentImage;
+    self.prevImage = currentImage;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -225,10 +234,13 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     CGContextStrokePath(UIGraphicsGetCurrentContext());
     self.tempImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     [self.tempImageView setAlpha:opacity];
+    
     UIGraphicsEndImageContext();
     
     lastPoint = currentPoint;
 }
+
+
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -244,6 +256,8 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
         CGContextFlush(UIGraphicsGetCurrentContext());
         self.tempImageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        
+        
     }
     
     UIGraphicsBeginImageContext(self.mainImageView.frame.size);
@@ -251,7 +265,11 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     [self.tempImageView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
     self.mainImageView.image = UIGraphicsGetImageFromCurrentImageContext();
     self.tempImageView.image = nil;
+     UIImage *currentImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+   
+    [self setImage:currentImage fromImage:self.prevImage];
 }
 
 //http://code.tutsplus.com/tutorials/ios-9-an-introduction-to-replaykit--cms-25458
@@ -262,7 +280,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     
     if (screenRecorder.available) {
        // [self stopUpdates];
-        
+        self.helpButton.enabled = false;
         [self.recordButton setBackgroundImage:[UIImage imageNamed:@"stop-512-sm.png"] forState:UIControlStateNormal];
         [[self navigationController] setNavigationBarHidden:YES animated:YES];
         [screenRecorder startRecordingWithMicrophoneEnabled:YES handler:^(NSError * _Nullable error) {
@@ -301,17 +319,27 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
         [screenRecorder stopRecordingWithHandler:^(RPPreviewViewController * _Nullable previewViewController, NSError * _Nullable error) {
             [[self navigationController] setNavigationBarHidden:NO animated:YES];
             self.recordIndicator.hidden = YES;
+            self.helpButton.enabled = YES;
             [self.recordButton setBackgroundImage:[UIImage imageNamed:@"redcircle2.png"] forState:UIControlStateNormal];
         
             if (previewViewController != nil)
             {
+                [self stopUpdates];
                 previewViewController.previewControllerDelegate = self;
-                [self presentViewController:previewViewController animated:YES completion:nil];
                 
-                NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:previewViewController];
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                [defaults setObject:encodedObject forKey:@"pvController"];
-                [defaults synchronize];
+                if ( [previewViewController respondsToSelector:@selector(popoverPresentationController)] ) {
+                    // iOS8
+                    previewViewController.popoverPresentationController.sourceView =
+                    self.view;
+                }
+                
+
+                [self presentViewController:previewViewController animated:YES completion:nil];
+                   //  }
+                //NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:previewViewController];
+               // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+              //  [defaults setObject:encodedObject forKey:@"pvController"];
+               // [defaults synchronize];
             }
         }];
     }
@@ -365,8 +393,30 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
 
 - (IBAction)clearButtonAction:(id)sender {
     
-    self.mainImageView.image = nil;
-    
+    [self clearAll];
+ //   self.mainImageView.image = nil;
+   
+}
+
+-(void)clearAll
+{
+    while ([self.undoManager canUndo]) {
+        [self.undoManager undo];
+    }
+}
+
+-(void)undoAction
+{
+    if ([self.undoManager canUndo]) {
+        [self.undoManager undo];
+    }
+}
+
+-(void)redoAction
+{
+    if ([self.undoManager canRedo]) {
+        [self.undoManager redo];
+    }
 }
 
 - (IBAction)pencilButtonAction:(UIButton *)sender {
@@ -477,7 +527,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     if ( event.subtype == UIEventSubtypeMotionShake )
     {
         // Put in code here to handle shake
-        self.mainImageView.image = nil;
+        [self clearAll];
     }
     
     //if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
@@ -489,7 +539,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
 - (void)previewControllerDidFinish:(RPPreviewViewController *)previewController
 {
     
-    
+    [self startUpdatesWithSliderValue:15];
     [previewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -573,6 +623,7 @@ didStopRecordingWithError:(NSError *)error
                                               otherButtonTitles:nil];
         [alert show];
     }
+    self.helpButton.enabled = YES;
     [self.recordButton setBackgroundImage:[UIImage imageNamed:@"redcircle2.png"] forState:UIControlStateNormal];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.recordIndicator.hidden = YES;
@@ -590,36 +641,63 @@ didStopRecordingWithError:(NSError *)error
 
 - (void)doDoubleTap
 {
-    [UIView animateWithDuration:0.5
-                     animations:^{
-                         if (isBarsHidden == NO) {
-                             [self hideSizePicker];
-                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y - BAR_ANIMATION_LENGTH);
-                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y - BAR_ANIMATION_LENGTH);
-                             
-                             
-                             
-                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y + BAR_ANIMATION_LENGTH);
-                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y + BAR_ANIMATION_LENGTH);
-                             isBarsHidden = YES;
-                             [self hideSizePicker];
-                             
-                         }
-                         else
-                         {
-                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y + BAR_ANIMATION_LENGTH);
-                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y + BAR_ANIMATION_LENGTH);
-                             
-                             
-                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y - BAR_ANIMATION_LENGTH);
-                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y - BAR_ANIMATION_LENGTH);
-                             isBarsHidden = NO;
-                         }
-                         
-                         
-                         
-                     }];
+    
+    if (isBarsHidden == NO) {
+        self.markerView.hidden = YES;
+        self.markerBackgroundView.hidden = YES;
+        
+        self.bottomBarView.hidden = YES;
+        self.bottomBarBackgroundView.hidden = YES;
+        [self hideSizePicker];
+        isBarsHidden = YES;
+    }
+    else
+    {
+        self.markerView.hidden = NO;
+        self.markerBackgroundView.hidden = NO;
+        
+        self.bottomBarView.hidden = NO;
+        self.bottomBarBackgroundView.hidden = NO;
+        isBarsHidden = NO;
+    }
+    
+    
+//    [UIView animateWithDuration:0.1
+//                     animations:^{
+//                         if (isBarsHidden == NO) {
+//                         //    [self hideSizePicker];
+//                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y - BAR_ANIMATION_LENGTH);
+//                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y - BAR_ANIMATION_LENGTH);
+//                             
+//                             
+//                             
+//                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y + BAR_ANIMATION_LENGTH);
+//                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y + BAR_ANIMATION_LENGTH);
+//                             isBarsHidden = YES;
+//                       //      [self hideSizePicker];
+//                             
+//                         }
+//                         else
+//                         {
+//                             
+//                             
+//                             
+//                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y - BAR_ANIMATION_LENGTH);
+//                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y - BAR_ANIMATION_LENGTH);
+//                             isBarsHidden = NO;
+//                             
+//                             
+//                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y + BAR_ANIMATION_LENGTH);
+//                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y + BAR_ANIMATION_LENGTH);
+//                         }
+//                         
+//                         
+//                         
+//                     }];
 }
 
 
+- (IBAction)undoButtonAction:(id)sender {
+    [self undoAction];
+}
 @end

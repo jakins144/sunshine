@@ -27,12 +27,14 @@
 
 - (IBAction)handelDoubleTap:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *helpButton;
 
 @property (weak, nonatomic) IBOutlet UIView *bottomBarBackgroundView;
 
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 @property (weak, nonatomic) IBOutlet UIView *markerBackgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
+- (IBAction)undoButtonAction:(id)sender;
 
 
 
@@ -49,6 +51,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *greenMarkerButton;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *tempImageView;
+
+@property (weak, nonatomic) IBOutlet UIImage *prevImage;
+
+@property (nonatomic, strong) NSMutableArray *stack;
+@property (nonatomic, strong) NSMutableArray *pointsArray;
 @property (weak, nonatomic) IBOutlet UIView *sizePickerView;
 @property (weak, nonatomic) IBOutlet UIView *sizePickViewBackground;
 

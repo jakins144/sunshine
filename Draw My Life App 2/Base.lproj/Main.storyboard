@@ -175,10 +175,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhq-BF-vVg" userLabel="mainImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-UN-KWX" userLabel="tempDrawImage">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <gestureRecognizers/>
-                            </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-fe-4B2">
                                 <rect key="frame" x="0.0" y="64" width="600" height="55"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -322,8 +318,19 @@
                                             <action selector="sizePicButtonAction:" destination="cez-tQ-f4c" eventType="touchUpInside" id="ekc-8H-guK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-bX-SB0">
-                                        <rect key="frame" x="112" y="8" width="44" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBb-nA-DS6">
+                                        <rect key="frame" x="112" y="6" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="8er-Ur-D8w"/>
+                                            <constraint firstAttribute="height" constant="44" id="byD-sa-bur"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="undo.png"/>
+                                        <connections>
+                                            <action selector="undoButtonAction:" destination="cez-tQ-f4c" eventType="touchUpInside" id="bVJ-P7-lLv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-bX-SB0">
+                                        <rect key="frame" x="164" y="6" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="j4L-GR-9ci"/>
                                             <constraint firstAttribute="height" constant="44" id="jzh-gf-RpX"/>
@@ -334,7 +341,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qer-tH-s6m">
-                                        <rect key="frame" x="164" y="6" width="44" height="44"/>
+                                        <rect key="frame" x="216" y="6" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="cop-lM-Yc7"/>
                                             <constraint firstAttribute="height" constant="44" id="xd8-Ri-kPb"/>
@@ -343,21 +350,30 @@
                                         <state key="normal" title="?">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="F0P-Gu-L7V" kind="presentation" id="2hW-BD-7Wf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Qer-tH-s6m" firstAttribute="leading" secondItem="dmF-bX-SB0" secondAttribute="trailing" constant="8" id="2Of-hY-r4U"/>
+                                    <constraint firstItem="Qer-tH-s6m" firstAttribute="leading" secondItem="dmF-bX-SB0" secondAttribute="trailing" constant="8" id="E6g-Q1-I30"/>
                                     <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="leading" id="K08-ro-dq8"/>
+                                    <constraint firstItem="dmF-bX-SB0" firstAttribute="leading" secondItem="EBb-nA-DS6" secondAttribute="trailing" constant="8" id="Llj-Ah-dGG"/>
                                     <constraint firstItem="vcH-9n-51l" firstAttribute="leading" secondItem="Krg-gX-p35" secondAttribute="leadingMargin" id="O2x-DM-WC9"/>
                                     <constraint firstItem="dmF-bX-SB0" firstAttribute="centerY" secondItem="Krg-gX-p35" secondAttribute="centerY" id="Rhw-ty-KBj"/>
+                                    <constraint firstItem="EBb-nA-DS6" firstAttribute="centerY" secondItem="Krg-gX-p35" secondAttribute="centerY" id="cZP-rj-mxF"/>
                                     <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="trailing" constant="19" id="dS8-qq-00W"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="vcH-9n-51l" secondAttribute="bottom" constant="3" id="dpC-vB-gqt"/>
-                                    <constraint firstItem="dmF-bX-SB0" firstAttribute="leading" secondItem="z9R-vj-Hks" secondAttribute="trailing" constant="8" id="dxo-Ij-HFY"/>
+                                    <constraint firstItem="dmF-bX-SB0" firstAttribute="leading" secondItem="z9R-vj-Hks" secondAttribute="trailing" constant="60" id="dxo-Ij-HFY"/>
                                     <constraint firstItem="vcH-9n-51l" firstAttribute="centerY" secondItem="Krg-gX-p35" secondAttribute="centerY" id="eSn-5J-hs3"/>
+                                    <constraint firstItem="EBb-nA-DS6" firstAttribute="leading" secondItem="z9R-vj-Hks" secondAttribute="trailing" constant="8" id="g58-LA-m8P"/>
                                     <constraint firstItem="Qer-tH-s6m" firstAttribute="centerY" secondItem="Krg-gX-p35" secondAttribute="centerY" id="iez-mm-OeN"/>
+                                    <constraint firstItem="Qer-tH-s6m" firstAttribute="leading" secondItem="EBb-nA-DS6" secondAttribute="trailing" constant="8" id="j5A-Bq-eQc"/>
                                     <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="trailing" constant="8" id="o8k-5l-Mg5"/>
                                     <constraint firstItem="z9R-vj-Hks" firstAttribute="leading" secondItem="vcH-9n-51l" secondAttribute="leading" id="sxm-Ml-eOQ"/>
+                                    <constraint firstItem="EBb-nA-DS6" firstAttribute="leading" secondItem="dmF-bX-SB0" secondAttribute="trailing" constant="-96" id="txt-oR-2YL"/>
                                     <constraint firstAttribute="height" constant="55" id="xAG-fM-GWf"/>
                                     <constraint firstItem="z9R-vj-Hks" firstAttribute="centerY" secondItem="Krg-gX-p35" secondAttribute="centerY" id="ybb-SB-igf"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="z9R-vj-Hks" secondAttribute="bottom" constant="4" id="zTE-bC-nDp"/>
@@ -369,6 +385,10 @@
                                         <exclude reference="dS8-qq-00W"/>
                                         <exclude reference="sxm-Ml-eOQ"/>
                                         <exclude reference="zTE-bC-nDp"/>
+                                        <exclude reference="txt-oR-2YL"/>
+                                        <exclude reference="dxo-Ij-HFY"/>
+                                        <exclude reference="2Of-hY-r4U"/>
+                                        <exclude reference="j5A-Bq-eQc"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -466,6 +486,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-UN-KWX" userLabel="tempDrawImage">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -510,6 +534,7 @@
                     <connections>
                         <outlet property="bottomBarBackgroundView" destination="2zb-8z-sax" id="g1w-HJ-ZPZ"/>
                         <outlet property="bottomBarView" destination="Krg-gX-p35" id="W2v-Ym-dwv"/>
+                        <outlet property="helpButton" destination="Qer-tH-s6m" id="C8a-In-YbB"/>
                         <outlet property="mainImageView" destination="vhq-BF-vVg" id="nyH-Uh-iiJ"/>
                         <outlet property="markerBackgroundView" destination="r9y-fe-4B2" id="4uV-It-Eho"/>
                         <outlet property="markerScrollView" destination="uWI-Uy-Zy9" id="p72-9w-0Vk"/>
@@ -584,15 +609,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nIs-Bk-OGj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIs-Bk-OGj">
                                 <rect key="frame" x="20" y="67" width="560" height="525"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="753" text="Welcome to Draw My Life App! 2!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-O0-ESg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="753" misplaced="YES" text="Welcome to Draw My Life App! 2!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-O0-ESg">
                                 <rect key="frame" x="20" y="20" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="110" id="1s8-uY-8Mf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -621,12 +646,160 @@
             </objects>
             <point key="canvasLocation" x="2048" y="2707"/>
         </scene>
+        <!--Record Screen Controls View Controller-->
+        <scene sceneID="2Wn-Zg-Wcq">
+            <objects>
+                <viewController storyboardIdentifier="controls" id="eze-ca-ysM" customClass="RecordScreenControlsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DEz-mS-Vkk"/>
+                        <viewControllerLayoutGuide type="bottom" id="CAq-iY-qit"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X2r-FI-ubP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HuK-hC-2dq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A2u-hh-TB5">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record Screen Controls" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1S-He-dNP">
+                                                <rect key="frame" x="8" y="18" width="560" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Draw: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MK-FI-H1h">
+                                                <rect key="frame" x="8" y="47" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clear: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-L2-f2c">
+                                                <rect key="frame" x="8" y="227" width="50" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clear.png" translatesAutoresizingMaskIntoConstraints="NO" id="uBQ-27-zaw">
+                                                <rect key="frame" x="77" y="227" width="44" height="44"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swipe.png" translatesAutoresizingMaskIntoConstraints="NO" id="Eht-AO-ZKt">
+                                                <rect key="frame" x="129" y="47" width="80" height="82"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUs-PY-Zdl">
+                                                <rect key="frame" x="8" y="137" width="584" height="82"/>
+                                                <string key="text">Use your finger to draw on the screen, choose a marker to change the color. Also swipe the marker color picker bar to access additional colors.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redcircle2.png" translatesAutoresizingMaskIntoConstraints="NO" id="p2L-CT-e7p">
+                                                <rect key="frame" x="194" y="386" width="44" height="44"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shake.png" translatesAutoresizingMaskIntoConstraints="NO" id="6cI-ar-5Yy">
+                                                <rect key="frame" x="129" y="227" width="80" height="82"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record/Stop Record:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK4-yj-vb2">
+                                                <rect key="frame" x="8" y="386" width="179" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stop-512-sm.png" translatesAutoresizingMaskIntoConstraints="NO" id="gmZ-Bg-dVc">
+                                                <rect key="frame" x="246" y="386" width="44" height="44"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marker_black.png" translatesAutoresizingMaskIntoConstraints="NO" id="cWy-yz-sac">
+                                                <rect key="frame" x="77" y="47" width="44" height="44"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flip_over.png" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-fs-wIZ">
+                                                <rect key="frame" x="298" y="386" width="80" height="82"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDc-Da-lvR">
+                                                <rect key="frame" x="8" y="476" width="584" height="114"/>
+                                                <string key="text">Tap the record button or face the device screen down parallel to the floor and up again to trigger a record. Repeat to stop recording. You will know it is recording when the “Record And Draw” title bar disappears and the red record button turns into a black square button. You will know it stopped recording when the video preview screen appears.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use the clear button or shake the device to make what is drawn on the screen disappear." lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkd-Pn-W8i">
+                                                <rect key="frame" x="8" y="317" width="584" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hide/Show Bars:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmZ-Vh-rAE">
+                                                <rect key="frame" x="8" y="598" width="154" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="double_tap.png" translatesAutoresizingMaskIntoConstraints="NO" id="bZL-pY-WSA">
+                                                <rect key="frame" x="176" y="598" width="80" height="82"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Double tap the screen to hide both the top marker color picker bar and bottom tool bar. Double tap again to show them." lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsE-bP-aH6">
+                                                <rect key="frame" x="8" y="688" width="584" height="74"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Marker Thickness:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeQ-Za-mbM">
+                                                <rect key="frame" x="8" y="770" width="219" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackcircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Bc-6R-d9m">
+                                                <rect key="frame" x="235" y="770" width="44" height="44"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap on the black circle on the far left of the bottom bar and a marker size picker will appear. Choose the thickness you want." lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eA-br-caS">
+                                                <rect key="frame" x="8" y="822" width="584" height="72"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Undo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTl-pR-MG8">
+                                                <rect key="frame" x="8" y="902" width="50" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="undo.png" translatesAutoresizingMaskIntoConstraints="NO" id="M2E-UM-5JV">
+                                                <rect key="frame" x="66" y="902" width="44" height="44"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap on the blue arrow to delete the last line drawn. " lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auS-oE-X5f">
+                                                <rect key="frame" x="8" y="954" width="584" height="51"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CAq-iY-qit" firstAttribute="top" secondItem="HuK-hC-2dq" secondAttribute="bottom" id="0DX-jd-ZVc"/>
+                            <constraint firstItem="HuK-hC-2dq" firstAttribute="leading" secondItem="X2r-FI-ubP" secondAttribute="leading" id="Lwv-Vh-bKg"/>
+                            <constraint firstItem="HuK-hC-2dq" firstAttribute="top" secondItem="X2r-FI-ubP" secondAttribute="top" id="Ukn-qh-8v2"/>
+                            <constraint firstAttribute="trailing" secondItem="HuK-hC-2dq" secondAttribute="trailing" id="zaG-m3-E7f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="controlsScrollView" destination="HuK-hC-2dq" id="LzT-Av-PzN"/>
+                        <outlet property="controlsView" destination="A2u-hh-TB5" id="Zwz-Hj-08E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lw2-5e-tfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2717" y="2684"/>
+        </scene>
     </scenes>
     <resources>
         <image name="DML2!Logo.png" width="981" height="467"/>
         <image name="Draw My Life!1.png" width="579" height="99"/>
         <image name="Feedback!1.png" width="415" height="88"/>
+        <image name="blackcircle.png" width="600" height="600"/>
         <image name="clear.png" width="286" height="272"/>
+        <image name="double_tap.png" width="98" height="178"/>
+        <image name="flip_over.png" width="218" height="194"/>
         <image name="marker_black.png" width="512" height="512"/>
         <image name="marker_blue.png" width="512" height="512"/>
         <image name="marker_brown.png" width="512" height="512"/>
@@ -640,5 +813,12 @@
         <image name="marker_yellow.png" width="512" height="512"/>
         <image name="redGradient.png" width="1920" height="1920"/>
         <image name="redcircle2.png" width="220" height="220"/>
+        <image name="shake.png" width="119" height="123"/>
+        <image name="stop-512-sm.png" width="512" height="512"/>
+        <image name="swipe.png" width="98" height="135"/>
+        <image name="undo.png" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2hW-BD-7Wf"/>
+    </inferredMetricsTieBreakers>
 </document>

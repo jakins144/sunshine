@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.messagesArray = @[@"Be rewarded with Notes, the Joox currency, by interacting with your favorite artists. Earn by following, promoting, listening and attending shows.", @"Win experiences by cashing in Notes or earn them by helping promote your favorite artists and their shows.", @"Show your loyalty by helping your artists and be rewarded with unique and individualized rewards.", @"Check-In to shows: Let everyone know you are there and earn chances to get on the spot upgrades, like backstage passes."].mutableCopy;
-    self.mainImageTitleArray = @[@"choosebackgroundT",@"pencilthicknessT",@"realRecordT",@"previewscreenT"].mutableCopy;
+    self.messagesArray = @[@"Welcome to Draw My Life App 2!  You will begin by turning your device to what orientation you want your canvas to be in which can be in Portrait or Landscape Mode. Then choose which color you want your background to be from a range of colors.", @"You can practice drawing before you start recording. Swipe the marker color bar at the top to reveal even more colors to choose from for your marker. The black circle icon at the bottom left controls the thickness of your marker.", @"Tap the red circle icon on the bottom bar to begin recording. This app uses Apple Replaykit technology to record the audio and video. You may choose to record both video and audio at the same time or only video. It is recommended that you choose record video and audio for the fullest and easiest Draw My Life experience.", @"Once you are finished, tap the black square icon at the bottom bar to stop recording. The preview screen will appear where you can review your video, save to camera roll by tapping save, or share to social media such as to Youtube by tapping the share button on the bottom left.", @"Several ways to share your Draw My Life video with your friends!", @"Enjoy! =)"].mutableCopy;
+    self.mainImageTitleArray = @[@"choosebackgroundT",@"pencilthicknessT",@"realRecordT",@"previewscreenT", @"shareT", @"ytpic"].mutableCopy;
     
     //self.smallImageTitleArray = @[@"smalltutpic1",@"smalltutpic1",@"smalltutpic3",@"smalltutpic4"].mutableCopy;
     
@@ -57,7 +57,27 @@
     pageContentViewController.pageIndex = index;
     
     return pageContentViewController;
+
 }
+
+
+- (RecordScreenControlsViewController *)rviewControllerAtIndex:(NSUInteger)index
+{
+    
+    
+    RecordScreenControlsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"controls"];
+    //  pageContentViewController.mainImageTitle = self.mainImageTitleArray[index];
+    //pageContentViewController.labelMessageText = self.messagesArray[index];
+    //  pageContentViewController.smallImageTitle = self.smallImageTitleArray[index];
+    pageContentViewController.pageIndex = index;
+    
+    return pageContentViewController;
+    
+}
+
+
+
+
 
 #pragma mark - Page View Controller Data Source
 
@@ -70,6 +90,10 @@
     }
     
     index--;
+    if (index == [self.messagesArray count]) {
+        return [self rviewControllerAtIndex:index];
+    }
+    else
     return [self viewControllerAtIndex:index];
     
     
@@ -86,10 +110,15 @@
     
     index++;
     
-    if (index == [self.messagesArray count]) {
+    if (index == [self.messagesArray count] + 1) {
         return nil;
     }
     
+    
+    if (index == [self.messagesArray count]) {
+        return [self rviewControllerAtIndex:index];
+    }
+    else
     return [self viewControllerAtIndex:index];
     
     
@@ -98,7 +127,7 @@
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
     
-    return [self.messagesArray count];
+    return [self.messagesArray count] + 1;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController

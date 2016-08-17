@@ -18,8 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UIPageControl *pageControl = [UIPageControl appearance];
-    // pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    // pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor clearColor];
 }
 

@@ -17,6 +17,15 @@
 		EB1D95F91D5D16C1006CD1C6 /* TutorialTourPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D95F81D5D16C1006CD1C6 /* TutorialTourPageViewController.m */; };
 		EB1D95FC1D5D1733006CD1C6 /* TutorialTourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D95FB1D5D1733006CD1C6 /* TutorialTourViewController.m */; };
 		EB1D95FF1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D95FE1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m */; };
+		EB1D96011D5D4BF2006CD1C6 /* ytpic.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D96001D5D4BF2006CD1C6 /* ytpic.png */; };
+		EB1D96031D5D59C2006CD1C6 /* swipe.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D96021D5D59C2006CD1C6 /* swipe.png */; };
+		EB1D96051D5D59CD006CD1C6 /* double_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D96041D5D59CD006CD1C6 /* double_tap.png */; };
+		EB1D96071D5D59D7006CD1C6 /* flip_over.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D96061D5D59D7006CD1C6 /* flip_over.png */; };
+		EB1D96091D5D59E3006CD1C6 /* shake.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D96081D5D59E3006CD1C6 /* shake.png */; };
+		EB1D960B1D5DBE1B006CD1C6 /* serveimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D960A1D5DBE1B006CD1C6 /* serveimage.png */; };
+		EB1D960D1D5DC242006CD1C6 /* blackcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D960C1D5DC242006CD1C6 /* blackcircle.png */; };
+		EB1D96101D5DC941006CD1C6 /* RecordScreenControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D960F1D5DC941006CD1C6 /* RecordScreenControlsViewController.m */; };
+		EB1D96121D5E5EDD006CD1C6 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1D96111D5E5EDD006CD1C6 /* undo.png */; };
 		EB3ABB9E1C7A32520054A82F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABB9D1C7A32520054A82F /* main.m */; };
 		EB3ABBA11C7A32520054A82F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA01C7A32520054A82F /* AppDelegate.m */; };
 		EB3ABBA41C7A32520054A82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBA31C7A32520054A82F /* ViewController.m */; };
@@ -28,6 +37,7 @@
 		EB3ABBD11C7A446C0054A82F /* ChooseColorCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBD01C7A446C0054A82F /* ChooseColorCollectionViewController.m */; };
 		EB3ABBED1C7A73A10054A82F /* RecordDrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBEC1C7A73A10054A82F /* RecordDrawingViewController.m */; };
 		EB3ABBF01C7A76610054A82F /* ChooseColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3ABBEF1C7A76610054A82F /* ChooseColorCollectionViewCell.m */; };
+		EB71E70A1D6169FA0097D751 /* 1536 x 2048-5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB71E7091D6169FA0097D751 /* 1536 x 2048-5.png */; };
 		EB8220F71D5997260041A4D6 /* marker_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8220F01D5997260041A4D6 /* marker_red.png */; };
 		EB8220F81D5997260041A4D6 /* marker_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8220F11D5997260041A4D6 /* marker_white.png */; };
 		EB8220F91D5997260041A4D6 /* marker_green.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8220F21D5997260041A4D6 /* marker_green.png */; };
@@ -82,6 +92,16 @@
 		EB1D95FB1D5D1733006CD1C6 /* TutorialTourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialTourViewController.m; sourceTree = "<group>"; };
 		EB1D95FD1D5D180F006CD1C6 /* TutorialTourPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialTourPageContentViewController.h; sourceTree = "<group>"; };
 		EB1D95FE1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialTourPageContentViewController.m; sourceTree = "<group>"; };
+		EB1D96001D5D4BF2006CD1C6 /* ytpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ytpic.png; sourceTree = "<group>"; };
+		EB1D96021D5D59C2006CD1C6 /* swipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe.png; sourceTree = "<group>"; };
+		EB1D96041D5D59CD006CD1C6 /* double_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = double_tap.png; sourceTree = "<group>"; };
+		EB1D96061D5D59D7006CD1C6 /* flip_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flip_over.png; sourceTree = "<group>"; };
+		EB1D96081D5D59E3006CD1C6 /* shake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shake.png; sourceTree = "<group>"; };
+		EB1D960A1D5DBE1B006CD1C6 /* serveimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = serveimage.png; sourceTree = "<group>"; };
+		EB1D960C1D5DC242006CD1C6 /* blackcircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackcircle.png; sourceTree = "<group>"; };
+		EB1D960E1D5DC941006CD1C6 /* RecordScreenControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordScreenControlsViewController.h; sourceTree = "<group>"; };
+		EB1D960F1D5DC941006CD1C6 /* RecordScreenControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordScreenControlsViewController.m; sourceTree = "<group>"; };
+		EB1D96111D5E5EDD006CD1C6 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
 		EB3ABB991C7A32520054A82F /* Draw My Life App 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw My Life App 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3ABB9D1C7A32520054A82F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB3ABB9F1C7A32520054A82F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +124,7 @@
 		EB3ABBEC1C7A73A10054A82F /* RecordDrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDrawingViewController.m; sourceTree = "<group>"; };
 		EB3ABBEE1C7A76610054A82F /* ChooseColorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseColorCollectionViewCell.h; sourceTree = "<group>"; };
 		EB3ABBEF1C7A76610054A82F /* ChooseColorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseColorCollectionViewCell.m; sourceTree = "<group>"; };
+		EB71E7091D6169FA0097D751 /* 1536 x 2048-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1536 x 2048-5.png"; sourceTree = "<group>"; };
 		EB8220F01D5997260041A4D6 /* marker_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_red.png; sourceTree = "<group>"; };
 		EB8220F11D5997260041A4D6 /* marker_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_white.png; sourceTree = "<group>"; };
 		EB8220F21D5997260041A4D6 /* marker_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_green.png; sourceTree = "<group>"; };
@@ -183,6 +204,7 @@
 				EB3ABBEE1C7A76610054A82F /* ChooseColorCollectionViewCell.h */,
 				EB3ABBEF1C7A76610054A82F /* ChooseColorCollectionViewCell.m */,
 				EB3ABB9F1C7A32520054A82F /* AppDelegate.h */,
+				EB1D95F81D5D16C1006CD1C6 /* TutorialTourPageViewController.m */,
 				EB3ABBA01C7A32520054A82F /* AppDelegate.m */,
 				EB3ABBA21C7A32520054A82F /* ViewController.h */,
 				EB3ABBA31C7A32520054A82F /* ViewController.m */,
@@ -192,11 +214,12 @@
 				EB1D95FA1D5D1733006CD1C6 /* TutorialTourViewController.h */,
 				EB1D95FB1D5D1733006CD1C6 /* TutorialTourViewController.m */,
 				EB1D95F71D5D16C1006CD1C6 /* TutorialTourPageViewController.h */,
-				EB1D95F81D5D16C1006CD1C6 /* TutorialTourPageViewController.m */,
 				EB3ABBA81C7A32520054A82F /* Assets.xcassets */,
 				EB3ABBAA1C7A32520054A82F /* LaunchScreen.storyboard */,
 				EB3ABBAD1C7A32520054A82F /* Info.plist */,
 				EB3ABB9C1C7A32520054A82F /* Supporting Files */,
+				EB1D960E1D5DC941006CD1C6 /* RecordScreenControlsViewController.h */,
+				EB1D960F1D5DC941006CD1C6 /* RecordScreenControlsViewController.m */,
 			);
 			path = "Draw My Life App 2";
 			sourceTree = "<group>";
@@ -204,6 +227,15 @@
 		EB3ABB9C1C7A32520054A82F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB71E7091D6169FA0097D751 /* 1536 x 2048-5.png */,
+				EB1D96111D5E5EDD006CD1C6 /* undo.png */,
+				EB1D960C1D5DC242006CD1C6 /* blackcircle.png */,
+				EB1D960A1D5DBE1B006CD1C6 /* serveimage.png */,
+				EB1D96081D5D59E3006CD1C6 /* shake.png */,
+				EB1D96061D5D59D7006CD1C6 /* flip_over.png */,
+				EB1D96041D5D59CD006CD1C6 /* double_tap.png */,
+				EB1D96021D5D59C2006CD1C6 /* swipe.png */,
+				EB1D96001D5D4BF2006CD1C6 /* ytpic.png */,
 				EB1D95F41D5D03C7006CD1C6 /* choosebackgroundT.png */,
 				EB1D95F21D5D0100006CD1C6 /* realRecordT.png */,
 				EB1D95EC1D5D00E1006CD1C6 /* pencilthicknessT.png */,
@@ -357,6 +389,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1D96071D5D59D7006CD1C6 /* flip_over.png in Resources */,
+				EB1D96051D5D59CD006CD1C6 /* double_tap.png in Resources */,
 				EBBC3C101D5BBB2C0071DB76 /* redGradient.png in Resources */,
 				EB8220FD1D5997260041A4D6 /* marker_purple.png in Resources */,
 				EB8221051D599EB20041A4D6 /* marker_yellow.png in Resources */,
@@ -366,24 +400,31 @@
 				EB8220FA1D5997260041A4D6 /* marker_black.png in Resources */,
 				EB1D95F11D5D00E1006CD1C6 /* shareT.png in Resources */,
 				EB0032291C976AA5000FAAD2 /* serveimage.jpg in Resources */,
+				EB71E70A1D6169FA0097D751 /* 1536 x 2048-5.png in Resources */,
 				EB1D95F01D5D00E1006CD1C6 /* previewscreenT.png in Resources */,
 				EB3ABBA91C7A32520054A82F /* Assets.xcassets in Resources */,
+				EB1D960D1D5DC242006CD1C6 /* blackcircle.png in Resources */,
 				EB8220F91D5997260041A4D6 /* marker_green.png in Resources */,
 				EB8220FB1D5997260041A4D6 /* marker_blue.png in Resources */,
 				EBBC3C041D5AF1660071DB76 /* clear.png in Resources */,
 				EB8220F81D5997260041A4D6 /* marker_white.png in Resources */,
 				EBBC3BFE1D5ADB5A0071DB76 /* redcircle2.png in Resources */,
+				EB1D960B1D5DBE1B006CD1C6 /* serveimage.png in Resources */,
 				EB8221021D599EB20041A4D6 /* marker_brown.png in Resources */,
 				EBBC3C0C1D5BB0E50071DB76 /* Draw My Life!1.png in Resources */,
 				EB1D95EF1D5D00E1006CD1C6 /* pencilthicknessT.png in Resources */,
 				EB8220F71D5997260041A4D6 /* marker_red.png in Resources */,
 				EBBC3C0A1D5BAEA50071DB76 /* Feedback!1.png in Resources */,
+				EB1D96011D5D4BF2006CD1C6 /* ytpic.png in Resources */,
+				EB1D96031D5D59C2006CD1C6 /* swipe.png in Resources */,
 				EBBC3C121D5BC15C0071DB76 /* DML2!Logo.png in Resources */,
+				EB1D96091D5D59E3006CD1C6 /* shake.png in Resources */,
 				EBBC3C081D5BA2760071DB76 /* Feedback!.png in Resources */,
 				EBBC3BFC1D5AD7B50071DB76 /* stop-512-sm.png in Resources */,
 				EBBC3C061D5BA1A10071DB76 /* Draw My Life!.png in Resources */,
 				EB3ABBA71C7A32520054A82F /* Main.storyboard in Resources */,
 				EB1D95F31D5D0100006CD1C6 /* realRecordT.png in Resources */,
+				EB1D96121D5E5EDD006CD1C6 /* undo.png in Resources */,
 				EB8220FC1D5997260041A4D6 /* marker_orange_.png in Resources */,
 				EB8221041D599EB20041A4D6 /* marker_magenta.png in Resources */,
 			);
@@ -416,6 +457,7 @@
 				EB1D95FF1D5D180F006CD1C6 /* TutorialTourPageContentViewController.m in Sources */,
 				EB1D95FC1D5D1733006CD1C6 /* TutorialTourViewController.m in Sources */,
 				EB3ABB9E1C7A32520054A82F /* main.m in Sources */,
+				EB1D96101D5DC941006CD1C6 /* RecordScreenControlsViewController.m in Sources */,
 				EB3ABBF01C7A76610054A82F /* ChooseColorCollectionViewCell.m in Sources */,
 				EB12FFA51D52A49C005B68B4 /* UINavigationController+DMLNavCategory.m in Sources */,
 				EB3ABBED1C7A73A10054A82F /* RecordDrawingViewController.m in Sources */,
@@ -565,7 +607,7 @@
 				INFOPLIST_FILE = "Draw My Life App 2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeappsupremena;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeapp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -580,7 +622,7 @@
 				INFOPLIST_FILE = "Draw My Life App 2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeappsupremena;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iridescentapps.drawmylifeapp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
