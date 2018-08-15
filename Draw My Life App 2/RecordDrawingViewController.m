@@ -1,17 +1,6 @@
 //
 //  RecordDrawingViewController.m
-//  Draw My Life App 2
-//
-//  Created by Owner on 2/21/16.
-//  Copyright © 2016 Josh Akins. All rights reserved.
-//
-//TO DO ADD PENCIL RESIZING FUNCTIONALITY
-//TO DO ADD MARKER CHOOSER BAR HORIZONTAL SCROLLING
-//TO DO LOOK AT WHAT ELSE OLD APP HAD
-//TO DO ADD SCREEN RECORDING
-//TO DO
-//TO DO
-//TO DO
+
 
 enum {
     BLACK = 1000,
@@ -47,17 +36,11 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
 {
     
     
-  //  self.recordIndicator.hidden = YES;
-   
-    
-    
     [super viewDidLoad];
     
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doDoubleTap)] ;
     doubleTap.numberOfTapsRequired = 2;
     [self.view addGestureRecognizer:doubleTap];
-    
-   // [singleTap requireGestureRecognizerToFail:doubleTap];
     
     isBarsHidden = NO;
     
@@ -87,12 +70,6 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     
     self.prevImage = self.tempImageView.image;
     
-//    self.window2 = [[UIWindow alloc] initWithFrame:self.view.frame];
-//    
-//    [self.window2.rootViewController.view addSubview:self.recordIndicator];
-//    [self.window2 setMultipleTouchEnabled:YES];
-//    
-//    [self.window2 makeKeyAndVisible];
 }
 
 - (void)setImage:(UIImage*)currentImage fromImage:(UIImage*)preImage
@@ -144,57 +121,6 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
                                                     otherButtonTitles:@"Save to Camera Roll", @"Tweet it!", @"Cancel", nil];
     [actionSheet showInView:self.view];
 }
-
-//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (buttonIndex == 1)
-//    {
-//        Class tweeterClass = NSClassFromString(@"TWTweetComposeViewController");
-//        
-//        if(tweeterClass != nil) {   // check for Twitter integration
-//            
-//            // check Twitter accessibility and at least one account is setup
-//            if([TWTweetComposeViewController canSendTweet]) {
-//                
-//                UIGraphicsBeginImageContextWithOptions(self.mainImage.bounds.size, NO,0.0);
-//                [self.mainImage.image drawInRect:CGRectMake(0, 0, self.mainImage.frame.size.width, self.mainImage.frame.size.height)];
-//                UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
-//                UIGraphicsEndImageContext();
-//                
-//                TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
-//                // set initial text
-//                [tweetViewController setInitialText:@"Check out this drawing I made from a tutorial on raywenderlich.com:"];
-//                
-//                // add image
-//                [tweetViewController addImage:SaveImage];
-//                tweetViewController.completionHandler = ^(TWTweetComposeViewControllerResult result) {
-//                    if(result == TWTweetComposeViewControllerResultDone) {
-//                        // the user finished composing a tweet
-//                    } else if(result == TWTweetComposeViewControllerResultCancelled) {
-//                        // the user cancelled composing a tweet
-//                    }
-//                    [self dismissViewControllerAnimated:YES completion:nil];
-//                };
-//                
-//                [self presentViewController:tweetViewController animated:YES completion:nil];
-//            } else {
-//                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You can't send a tweet right now, make sure you have at least one Twitter account setup and your device is using iOS5" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                [alertView show];
-//            }
-//        } else {
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You must upgrade to iOS5.0 in order to send tweets from this application" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//            [alertView show];
-//        }
-//        
-//    } else if(buttonIndex == 0) {
-//        
-//        UIGraphicsBeginImageContextWithOptions(self.mainImage.bounds.size, NO, 0.0);
-//        [self.mainImage.image drawInRect:CGRectMake(0, 0, self.mainImage.frame.size.width, self.mainImage.frame.size.height)];
-//        UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
-//    }
-//}
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
@@ -335,13 +261,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
                 
 
                 [self presentViewController:previewViewController animated:YES completion:nil];
-                   //  }
-                //NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:previewViewController];
-               // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-              //  [defaults setObject:encodedObject forKey:@"pvController"];
-               // [defaults synchronize];
-            }
-        }];
+       
     }
     
     
@@ -394,7 +314,6 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
 - (IBAction)clearButtonAction:(id)sender {
     
     [self clearAll];
- //   self.mainImageView.image = nil;
    
 }
 
@@ -495,9 +414,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     self.sizePickerView.alpha = 1.0;
     
     self.sizePickViewBackground.hidden = NO;
-    self.sizePickerView.hidden = NO;
-    
-    
+    self.sizePickerView.hidden = NO;  
    
 }
 
@@ -530,7 +447,6 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
         [self clearAll];
     }
     
-    //if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
         [super motionEnded:motion withEvent:event];
 }
 
@@ -557,15 +473,6 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
     if ([mManager isDeviceMotionAvailable] == YES) {
         [mManager setDeviceMotionUpdateInterval:updateInterval];
         [mManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
-            // attitude
-            // [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeAttitude] addX:deviceMotion.attitude.roll y:deviceMotion.attitude.pitch z:deviceMotion.attitude.yaw];
-            //            //rotationRate
-            //            [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeRotationRate] addX:deviceMotion.rotationRate.x y:deviceMotion.rotationRate.y z:deviceMotion.rotationRate.z];
-            //            // gravity
-            //            [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeGravity] addX:deviceMotion.gravity.x y:deviceMotion.gravity.y z:deviceMotion.gravity.z];
-            //            // userAcceleration
-            //            [[weakSelf.graphViews objectAtIndex:kDeviceMotionGraphTypeUserAcceleration] addX:deviceMotion.userAcceleration.x y:deviceMotion.userAcceleration.y z:deviceMotion.userAcceleration.z];
-            // NSLog(@"roll is: %f", deviceMotion.attitude.roll);
             
             if (deviceMotion.attitude.roll <= -3 && downMotionTriggered == NO) {
                 [self toggleRecording];
@@ -579,9 +486,7 @@ const NSUInteger BAR_ANIMATION_LENGTH = 200;
             
         }];
     }
-    
-    //    self.graphLabel.text = [self.graphTitles objectAtIndex:[self.segmentedControl selectedSegmentIndex]];
-    //    self.updateIntervalLabel.text = [NSString stringWithFormat:@"%f", updateInterval];
+
 }
 
 - (CMMotionManager *)motionManager
@@ -661,39 +566,7 @@ didStopRecordingWithError:(NSError *)error
         isBarsHidden = NO;
     }
     
-    
-//    [UIView animateWithDuration:0.1
-//                     animations:^{
-//                         if (isBarsHidden == NO) {
-//                         //    [self hideSizePicker];
-//                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y - BAR_ANIMATION_LENGTH);
-//                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y - BAR_ANIMATION_LENGTH);
-//                             
-//                             
-//                             
-//                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y + BAR_ANIMATION_LENGTH);
-//                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y + BAR_ANIMATION_LENGTH);
-//                             isBarsHidden = YES;
-//                       //      [self hideSizePicker];
-//                             
-//                         }
-//                         else
-//                         {
-//                             
-//                             
-//                             
-//                             self.bottomBarView.center = CGPointMake(self.bottomBarView.center.x, self.bottomBarView.center.y - BAR_ANIMATION_LENGTH);
-//                             self.bottomBarBackgroundView.center = CGPointMake(self.bottomBarBackgroundView.center.x, self.bottomBarBackgroundView.center.y - BAR_ANIMATION_LENGTH);
-//                             isBarsHidden = NO;
-//                             
-//                             
-//                             self.markerView.center = CGPointMake(self.markerView.center.x, self.markerView.center.y + BAR_ANIMATION_LENGTH);
-//                             self.markerBackgroundView.center = CGPointMake(self.markerBackgroundView.center.x, self.markerBackgroundView.center.y + BAR_ANIMATION_LENGTH);
-//                         }
-//                         
-//                         
-//                         
-//                     }];
+  
 }
 
 
